@@ -343,7 +343,7 @@ const shouldShowEndPoint = (index: number) => {
         <div class="timeline">
           {experiences.map((job, index) => (
             <article class="timeline-item">
-              <div class="timeline-date">
+              <div class={`timeline-date ${shouldShowEndPoint(index) ? '' : 'single-start'}`}>
                 {shouldShowEndPoint(index) && <time class="time-point time-end">{periodPoints(job.period).end}</time>}
                 <time class="time-point time-start">{periodPoints(job.period).start}</time>
               </div>
@@ -798,6 +798,17 @@ const shouldShowEndPoint = (index: number) => {
     z-index: 3;
   }
 
+  .timeline-date.single-start {
+    justify-content: flex-end;
+  }
+
+  .timeline-date.single-start .time-start {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
   .time-point {
     background: var(--bg);
     border: 1px solid var(--line);
@@ -1019,6 +1030,7 @@ const shouldShowEndPoint = (index: number) => {
       display: flex;
       gap: 8px;
       grid-column: 1;
+      justify-content: flex-start;
       min-height: auto;
       padding-top: 14px;
       position: static;
