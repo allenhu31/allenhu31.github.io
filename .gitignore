@@ -24,3 +24,6 @@ chrome-headless*.log
 
 # jetbrains setting folder
 .idea/
+
+# local tools downloaded by Codex
+.tools/
