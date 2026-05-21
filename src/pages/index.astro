@@ -244,7 +244,6 @@ const shouldShowEndPoint = (index: number) => {
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Case Studies</a>
-        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -255,11 +254,6 @@ const shouldShowEndPoint = (index: number) => {
           <h1>{profile.name}</h1>
           <p class="role">{profile.role} / Network Architect / Cloud Networking</p>
           <p class="summary">{profile.summary}</p>
-          <div class="actions">
-            <a class="button primary" href={`mailto:${profile.email}`}>Email Me</a>
-            <a class="button" href={profile.linkedin}>LinkedIn</a>
-            <a class="button" href={profile.github}>GitHub</a>
-          </div>
         </div>
         <aside class="hero-visual" aria-label="Profile photo and professional focus">
           <img src="/images/profile-toronto-waterfront.jpg" alt="Dongxu Allen Hu near the Toronto waterfront" />
@@ -387,17 +381,6 @@ const shouldShowEndPoint = (index: number) => {
         <ul class="cert-list">
           {education.map((item) => <li>{item}</li>)}
         </ul>
-      </section>
-
-      <section class="contact" id="contact">
-        <p class="eyebrow">Contact</p>
-        <h2>Let us connect.</h2>
-        <p>For opportunities, collaboration, or technical conversations, reach me through email or LinkedIn.</p>
-        <div class="actions">
-          <a class="button primary" href={`mailto:${profile.email}`}>Email</a>
-          <a class="button" href={profile.linkedin}>LinkedIn</a>
-          <a class="button" href={profile.github}>GitHub</a>
-        </div>
       </section>
     </main>
   </body>
@@ -535,33 +518,9 @@ const shouldShowEndPoint = (index: number) => {
     overflow-wrap: anywhere;
   }
 
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  .button {
-    align-items: center;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    display: inline-flex;
-    font-weight: 800;
-    min-height: 44px;
-    padding: 0 18px;
-  }
-
-  .button.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-  }
-
   .hero-panel,
   .card,
-  .timeline-item,
-  .contact {
+  .timeline-item {
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -609,8 +568,7 @@ const shouldShowEndPoint = (index: number) => {
 
   .hero-panel p,
   .card p,
-  .timeline-item p,
-  .contact p {
+  .timeline-item p {
     color: var(--muted);
     line-height: 1.65;
   }
@@ -976,11 +934,6 @@ const shouldShowEndPoint = (index: number) => {
     color: var(--muted);
     line-height: 1.58;
     margin: 0;
-  }
-
-  .contact {
-    margin-top: 32px;
-    padding: clamp(28px, 6vw, 56px);
   }
 
   @media (max-width: 860px) {
