@@ -476,13 +476,13 @@ const shouldShowEndPoint = (index: number) => {
     align-items: center;
     display: grid;
     gap: 40px;
-    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+    grid-template-columns: minmax(760px, 1.12fr) minmax(340px, 0.68fr);
     min-height: clamp(560px, calc(100vh - 72px), 760px);
     padding: 48px 0;
   }
 
   .hero-copy {
-    max-width: 760px;
+    max-width: 1040px;
     min-width: 0;
   }
 
@@ -503,9 +503,10 @@ const shouldShowEndPoint = (index: number) => {
   }
 
   h1 {
-    font-size: clamp(3rem, 7.2vw, 5.8rem);
+    font-size: clamp(3rem, 6.2vw, 5.8rem);
     line-height: 1;
     margin-bottom: 18px;
+    white-space: nowrap;
   }
 
   h2 {
@@ -799,14 +800,12 @@ const shouldShowEndPoint = (index: number) => {
   }
 
   .timeline-date.single-start {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .timeline-date.single-start .time-start {
-    bottom: 0;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
+    position: relative;
+    transform: none;
   }
 
   .time-point {
@@ -998,6 +997,10 @@ const shouldShowEndPoint = (index: number) => {
     .hero,
     .split {
       grid-template-columns: 1fr;
+    }
+
+    h1 {
+      white-space: normal;
     }
 
     .timeline {
