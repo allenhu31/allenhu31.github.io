@@ -4,11 +4,18 @@ const profile = {
   role: 'Senior Network Engineer',
   location: 'Toronto, Canada',
   summary:
-    'Senior network engineer and network architect with experience in large-scale enterprise networks, hybrid cloud connectivity, SDN, SD-WAN, security operations, automation, and 24/7 infrastructure reliability.',
+    'I design, operate, and modernize large-scale enterprise networks across data centers, branch offices, public cloud, SDN, SD-WAN, and security platforms.',
   email: 'hudongxu31@gmail.com',
   linkedin: 'https://www.linkedin.com/in/your-linkedin/',
   github: 'https://github.com/allenhu31',
 };
+
+const metrics = [
+  { value: '270+', label: 'member companies supported through hybrid network operations' },
+  { value: '200+', label: 'global sites optimized through SD-WAN migration' },
+  { value: '99.9%', label: 'availability target delivered in enterprise network environments' },
+  { value: '¥6M+', label: 'annual cost reduction from WAN optimization' },
+];
 
 const skills = [
   {
@@ -68,25 +75,49 @@ const experiences = [
 
 const projects = [
   {
-    name: 'Hybrid Cloud Network Operations',
+    name: 'Hybrid Cloud Network Operations for 270+ Companies',
+    context:
+      'China Resources Gas needed stable connectivity across enterprise networks, IDC data centers, Huawei Cloud, and AWS while supporting a large group-company environment.',
+    approach:
+      'Operated BGP/MPLS backbone connectivity, OSPF, Cisco firewall ACLs, route policies, AWS VPC and IAM controls, Huawei Cloud access, WAF policies, DNS, VPC Peering, ELB, and security groups.',
+    result:
+      'Maintained 99.9% business availability and reduced intrusion-detection false positives by 15% through RBAC and cloud security policy improvements.',
     description:
       'Enterprise-to-cloud network operations across IDC, AWS, Huawei Cloud, BGP/MPLS, firewalls, WAF, and IAM security controls.',
     tags: ['BGP/MPLS', 'AWS', 'Huawei Cloud', 'WAF'],
   },
   {
-    name: 'Global SD-WAN Optimization',
+    name: 'Global SD-WAN Optimization for 200+ Sites',
+    context:
+      'Branch offices and global sites relied on traditional BGP-based dual-line backup for headquarters access, affecting cost, failover, and centralized management.',
+    approach:
+      'Replaced the legacy design with Fortinet SD-WAN, enabling intelligent path selection, faster failover, centralized traffic control, and better service continuity for OA, email, and Cisco TelePresence.',
+    result:
+      'Improved availability from 99% to 99.9% and reduced annual operational costs by more than ¥6 million RMB.',
     description:
       'Fortinet SD-WAN migration for 200+ global sites, improving failover behavior, centralizing traffic management, and cutting annual costs.',
     tags: ['Fortinet', 'SD-WAN', 'BGP', 'WAN'],
   },
   {
-    name: 'IDC EVPN/VXLAN Migration',
+    name: 'IDC EVPN/VXLAN Migration and SDN Fabric',
+    context:
+      'Business migration between Beijing and Guangzhou required preserving internal IP addressing while modernizing data center network architecture.',
+    approach:
+      'Designed and implemented H3C 6800 EVPN/VXLAN migration, SDN Fabric architecture, policy-based networking, OSPF path control, and IDC disaster recovery drill procedures.',
+    result:
+      'Enabled smoother workload transition, improved network agility, reduced MSTP leased bandwidth by 70M, and lowered monthly operating cost by ¥70,000.',
     description:
       'Data center migration using H3C 6800 EVPN/VXLAN to preserve internal IP addressing during workload transition.',
     tags: ['EVPN', 'VXLAN', 'H3C', 'IDC'],
   },
   {
-    name: 'Network Automation & CMDB',
+    name: 'Network Automation and CMDB Modernization',
+    context:
+      'Daily operations required repeatable device backups, traffic reports, maintenance workflows, and better asset data performance.',
+    approach:
+      'Built Python automation using Paramiko, Netmiko, and Zabbix API, and contributed to CMDB migration from Python to Golang with the development team.',
+    result:
+      'Improved operational efficiency, boosted CMDB performance by 30%, and improved scalability by 50%.',
     description:
       'Automation for device backups, traffic reporting, and operations workflows using Python, Netmiko, Paramiko, Zabbix API, and Golang CMDB improvements.',
     tags: ['Python', 'Golang', 'Zabbix API', 'CMDB'],
@@ -107,6 +138,13 @@ const education = [
   'Guangxi Normal University - Master in Business Administration, June 2018',
   'Hunan College of Information - Electrical Automation, June 2009',
 ];
+
+const writingIdeas = [
+  'BGP/MPLS hybrid cloud operations notes',
+  'Fortinet SD-WAN migration lessons learned',
+  'EVPN/VXLAN data center migration design',
+  'Network automation with Python, Netmiko, and Zabbix API',
+];
 ---
 
 <html lang="en">
@@ -125,7 +163,7 @@ const education = [
       <nav aria-label="Main navigation">
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Case Studies</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -150,10 +188,19 @@ const education = [
         </aside>
       </section>
 
+      <section class="metrics" aria-label="Career highlights">
+        {metrics.map((metric) => (
+          <article>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </article>
+        ))}
+      </section>
+
       <section class="section" id="skills">
         <div class="section-heading">
-          <p class="eyebrow">Capabilities</p>
-          <h2>Skills</h2>
+          <p class="eyebrow">Expertise</p>
+          <h2>What I Work On</h2>
         </div>
         <div class="skill-grid">
           {skills.map((skill) => (
@@ -169,7 +216,35 @@ const education = [
 
       <section class="section" id="experience">
         <div class="section-heading">
-          <p class="eyebrow">Background</p>
+          <p class="eyebrow">Selected Work</p>
+          <h2>Case Studies</h2>
+        </div>
+        <div class="case-grid">
+          {projects.map((project) => (
+            <article class="case-card">
+              <div>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+              </div>
+              <dl>
+                <dt>Context</dt>
+                <dd>{project.context}</dd>
+                <dt>Approach</dt>
+                <dd>{project.approach}</dd>
+                <dt>Result</dt>
+                <dd>{project.result}</dd>
+              </dl>
+              <div class="tags">
+                {project.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Career Timeline</p>
           <h2>Experience</h2>
         </div>
         <div class="timeline">
@@ -188,22 +263,14 @@ const education = [
         </div>
       </section>
 
-      <section class="section" id="projects">
-        <div class="section-heading">
-          <p class="eyebrow">Proof of Work</p>
-          <h2>Projects</h2>
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Writing Backlog</p>
+          <h2>Topics I Can Write About</h2>
         </div>
-        <div class="project-grid">
-          {projects.map((project) => (
-            <article class="card project">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <div class="tags">
-                {project.tags.map((tag) => <span>{tag}</span>)}
-              </div>
-            </article>
-          ))}
-        </div>
+        <ul class="cert-list">
+          {writingIdeas.map((topic) => <li>{topic}</li>)}
+        </ul>
       </section>
 
       <section class="section split">
@@ -439,6 +506,37 @@ const education = [
     padding: 64px 0;
   }
 
+  .metrics {
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 34px 0 64px;
+  }
+
+  .metrics article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    min-height: 160px;
+    padding: 22px;
+  }
+
+  .metrics strong {
+    color: var(--accent);
+    display: block;
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .metrics span {
+    color: var(--muted);
+    display: block;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
   .section-heading {
     align-items: end;
     display: flex;
@@ -455,6 +553,47 @@ const education = [
 
   .project-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    padding: 26px;
+  }
+
+  .case-card h3 {
+    font-size: 1.34rem;
+  }
+
+  .case-card dl {
+    display: grid;
+    gap: 10px 16px;
+    grid-template-columns: 94px minmax(0, 1fr);
+    margin: 0;
+  }
+
+  .case-card dt {
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .case-card dd {
+    color: var(--muted);
+    line-height: 1.58;
+    margin: 0;
   }
 
   .card {
@@ -568,7 +707,17 @@ const education = [
     }
 
     .skill-grid,
-    .project-grid {
+    .project-grid,
+    .metrics,
+    .case-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics {
+      padding-bottom: 48px;
+    }
+
+    .case-card dl {
       grid-template-columns: 1fr;
     }
 
