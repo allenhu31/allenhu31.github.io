@@ -804,8 +804,10 @@ const shouldShowEndPoint = (index: number) => {
   }
 
   .timeline-date.single-start .time-start {
-    position: relative;
-    transform: none;
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
   }
 
   .time-point {
@@ -1041,6 +1043,11 @@ const shouldShowEndPoint = (index: number) => {
 
     .time-point {
       max-width: none;
+      position: static;
+      transform: none;
+    }
+
+    .timeline-date.single-start .time-start {
       position: static;
       transform: none;
     }
