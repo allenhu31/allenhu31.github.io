@@ -790,24 +790,25 @@ const shouldShowEndPoint = (index: number) => {
 
   .timeline-date {
     align-items: center;
-    align-self: stretch;
     display: flex;
     flex-direction: column;
-    grid-column: 2;
     justify-content: space-between;
-    min-height: 100%;
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 112px;
     z-index: 3;
   }
 
   .timeline-date.single-start {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   .timeline-date.single-start .time-start {
-    bottom: 0;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
+    position: relative;
+    transform: none;
   }
 
   .time-point {
@@ -1036,9 +1037,13 @@ const shouldShowEndPoint = (index: number) => {
       gap: 8px;
       grid-column: 1;
       justify-content: flex-start;
+      left: auto;
       min-height: auto;
       padding-top: 14px;
       position: static;
+      top: auto;
+      transform: none;
+      width: auto;
     }
 
     .time-point {
