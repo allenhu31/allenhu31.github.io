@@ -2,7 +2,7 @@
 const profile = {
   name: 'Dongxu (Allen) Hu',
   role: 'Senior Network Engineer',
-  location: 'Toronto, Canada',
+  location: 'Waterloo, Canada',
   summary:
     'I design, operate, and modernize large-scale enterprise networks across data centers, branch offices, public cloud, SDN, SD-WAN, and security platforms.',
   email: 'hudongxu31@gmail.com',
@@ -14,7 +14,7 @@ const metrics = [
   { value: '270+', label: 'member companies supported through hybrid network operations' },
   { value: '200+', label: 'global sites optimized through SD-WAN migration' },
   { value: '99.9%', label: 'availability target delivered in enterprise network environments' },
-  { value: '¥6M+', label: 'annual cost reduction from WAN optimization' },
+  { value: 'RMB 6M+', label: 'annual cost reduction from WAN optimization' },
 ];
 
 const skills = [
@@ -38,37 +38,91 @@ const skills = [
 
 const experiences = [
   {
-    title: 'Senior Engineer',
-    company: 'China Resources Gas Co., Ltd - Zhongshan, China',
-    period: 'Jan 2023 - Feb 2024',
+    title: 'Core Network Engineer',
+    company: 'China Resources Gas / Runzhi Technology - Zhongshan, China',
+    period: '2023.01 - 2024.02',
+    stack: ['AWS', 'Huawei Cloud', 'BGP/MPLS', 'OSPF', 'VPC', 'ECS', 'WAF', 'Firewall ACL', 'SCADA'],
     bullets: [
-      'Managed hybrid network infrastructure for 270+ member companies, connecting enterprise networks, IDC data centers, Huawei Cloud, and AWS through BGP/MPLS telecom backbone services.',
-      'Led daily operations for BGP/MPLS, OSPF, Cisco firewalls, ACL policies, route policies, and public cloud connectivity, maintaining 99.9% business availability.',
-      'Optimized AWS and Huawei Cloud security operations across VPC, EC2, IAM, Lambda, WAF, security groups, Route 53, VPC Peering, ELB, and cloud database security.',
-      'Implemented IAM role-based access control and security policy improvements, reducing intrusion-detection false positives by 15%.',
+      'Operated AWS and Huawei Cloud environments, including subnet and VPC planning, ECS resources, storage planning, capacity management, and cost management.',
+      'Built and maintained connectivity among Zhongshan office, Huawei Cloud, Shanwei data center, Zhengzhou data center, and multiple POP sites.',
+      'Standardized network architecture and security practices for 270 China Resources Gas member companies.',
+      'Optimized the SCADA core network, including firewall rule redesign and Huawei Cloud core network device migration and upgrade.',
     ],
   },
   {
     title: 'Network Architect',
     company: 'Sangfor Technologies Inc. - Shenzhen, China',
-    period: 'Jan 2021 - Dec 2022',
+    period: '2021.11 - 2022.12',
+    stack: ['Hosted Cloud', 'HCI', 'SDN', 'SRE', 'DevOps', 'CMDB', 'Change Management'],
     bullets: [
-      'Led VMware NSX-T deployment and upgrade in a new data center, replacing NSX-V and integrating vCenter Server, ESXi transport nodes, NSX Edge, and NSX Manager.',
-      'Optimized switching, routing, load balancing, firewalling, VPN services, and SDN troubleshooting practices for the engineering team.',
-      'Led WAN optimization for 200+ global sites connected to headquarters, replacing traditional BGP dual-line backup with Fortinet SD-WAN.',
-      'Improved availability from 99% to 99.9% and reduced annual operational costs by more than ¥6 million RMB through smarter redundancy and bandwidth usage.',
+      'Owned national hosted-cloud network architecture across 45 self-built nodes and 20 partner-built nodes.',
+      'Designed, delivered, and operated hosted cloud and hyper-converged infrastructure, connecting physical network logic with cloud service delivery.',
+      'Defined infrastructure operation processes with delivery, SRE, and hyper-converged R&D teams.',
+      'Guided the operations development team on DevOps framework design, including change request systems, CMDB, and workflow systems.',
     ],
   },
   {
-    title: 'Senior Network Engineer',
-    company: 'Kingsoft Seasun - Zhuhai, China',
-    period: 'Aug 2015 - Jan 2021',
+    title: 'Network Architecture & Operations Lead',
+    company: 'Country Garden Group - Foshan, China',
+    period: '2021.02 - 2021.11',
+    stack: ['SD-WAN', 'BGP', 'Cisco ASR', 'Fortinet', 'VXLAN', 'Wi-Fi 6', 'ITSM', 'Private Cloud SDN'],
     bullets: [
-      'Expanded the network operations team from 2 to 7 members, adding network engineers, a monitoring engineer, and 24/7 monitoring operators.',
-      'Built Python automation with Paramiko, Netmiko, and Zabbix API for configuration backup, routine maintenance, and traffic reporting; contributed to CMDB migration from Python to Golang.',
-      'Deployed Kubernetes and migrated website services from VMs to Kubernetes, improving resource utilization by 40% and reducing deployment time by 70%.',
-      'Led IDC network optimization across Beijing, Shanghai, and Guangzhou POP sites, using OSPF path control to reduce MSTP leased bandwidth by 70M and save ¥70,000 per month.',
-      'Designed H3C EVPN/VXLAN migration and SDN Fabric architecture, plus disaster recovery drills for a Guangzhou IDC with 180+ racks and dual ISP uplinks.',
+      'Led network optimization across three data centers and two large campus networks.',
+      'Drove private cloud network operations and new private cloud construction, including tender support, equipment selection, and architecture documentation.',
+      'Converted 200+ regional site connections from BGP dual-line routing to SD-WAN path selection while preserving service quality and reducing network cost by 50%.',
+      'Led security audit, compliance, emergency drills, WAF, firewall, IDS/IPS, and access authentication work.',
+      'Rebuilt network documentation, including IP inventory, topology, architecture white papers, and ITSM-based operations processes.',
+    ],
+  },
+  {
+    title: 'Network Engineer',
+    company: 'Kingsoft Seasun - Zhuhai, China',
+    period: '2015.08 - 2021.01',
+    stack: ['IDC', 'OSPF', 'EVPN', 'VXLAN', 'H3C 6800', 'Python', 'Golang', 'Kubernetes', 'Zabbix'],
+    bullets: [
+      'Owned network architecture, operations, expansion, and optimization for Kingsoft Seasun game IDC environments.',
+      'Consolidated IDC resources across Shanghai, Beijing, and Guangzhou, reducing rack and leased-line costs while improving internal network connectivity.',
+      'Built EVPN/VXLAN with H3C 6800 for cross-data-center same-subnet requirements and completed SDN architecture in Kingsoft Software Park.',
+      'Developed Python scripts for device configuration backup, traffic weekly reports, and daily operations; participated in Golang-based CMDB and workflow reconstruction.',
+      'Built Kubernetes in hosted IDC virtualization environments and supported migration of official website services to containers.',
+    ],
+  },
+  {
+    title: 'Network Engineer',
+    company: 'Kedacom Smart Cloud - Guangzhou, China',
+    period: '2014.05 - 2015.08',
+    stack: ['Cisco Webex DC', 'BSS', 'Media Gateway', 'IDC', 'Office Network', 'Security Policy'],
+    bullets: [
+      'Built network environments for BSS, Beijing media gateway, Guangzhou office, and Suzhou office projects.',
+      'Handled data center site selection, network device selection, network planning, IDC uplink selection, and project delivery control.',
+      'Connected Beijing Cisco data center, Webex data center, APAC BSS site, media gateway site, and office networks with security policies.',
+      'Built the Beijing Zhaowei Webex data center network and APAC BSS network.',
+    ],
+  },
+  {
+    title: 'Network Engineer',
+    company: 'Beijing Internet Harbor Technology - Beijing, China',
+    period: '2011.11 - 2014.05',
+    stack: ['BGP', 'MPLS/VPN', 'Cisco Nexus 7018', 'ASA', 'IDS', 'Traffic Scrubbing', 'VMware'],
+    bullets: [
+      'Built and operated IDC networks and maintained a global BGP MPLS/VPN backbone across 24 POP sites.',
+      'Planned new POP sites using BGP confederation, AS-PATH, and MED to control forward and return paths.',
+      'Delivered China Mobile Southern Base cloud data center phase-two network optimization.',
+      'Migrated service gateways from Cisco ASA to Nexus 7018, added IDS and traffic scrubbing capabilities, and improved cloud host security protection.',
+      'Completed backbone POP construction in Dalian, Wuhan, Changsha, Wuxi, and other cities.',
+    ],
+  },
+  {
+    title: 'Network Engineer',
+    company: 'China Digital Group - Guangzhou / Hong Kong',
+    period: '2009.03 - 2011.11',
+    stack: ['Cisco 3750', 'Cisco 2960', 'F5 BIG-IP', 'Citrix NetScaler', 'OSPF', 'EIGRP', 'STP', 'DDoS Protection'],
+    bullets: [
+      'Operated Guangzhou Qixinggang South China IDC and Hong Kong PCCW IDC networks, including ISP circuits and daily facility network operations.',
+      'Designed, configured, and implemented new network requirements for production systems and provided network technical support to internal teams.',
+      'Built active/standby load balancing with F5 BIG-IP and NetScaler to remove single points of failure.',
+      'Optimized Layer 2 physical structure, STP, safety protection, OSPF and EIGRP filtering to reduce loop and instability risk.',
+      'Led Hong Kong HGC data center network construction for overseas mail, DNS, and business-critical systems.',
     ],
   },
 ];
@@ -93,7 +147,7 @@ const projects = [
     approach:
       'Replaced the legacy design with Fortinet SD-WAN, enabling intelligent path selection, faster failover, centralized traffic control, and better service continuity for OA, email, and Cisco TelePresence.',
     result:
-      'Improved availability from 99% to 99.9% and reduced annual operational costs by more than ¥6 million RMB.',
+      'Improved availability from 99% to 99.9% and reduced annual operational costs by more than RMB 6 million.',
     description:
       'Fortinet SD-WAN migration for 200+ global sites, improving failover behavior, centralizing traffic management, and cutting annual costs.',
     tags: ['Fortinet', 'SD-WAN', 'BGP', 'WAN'],
@@ -105,7 +159,7 @@ const projects = [
     approach:
       'Designed and implemented H3C 6800 EVPN/VXLAN migration, SDN Fabric architecture, policy-based networking, OSPF path control, and IDC disaster recovery drill procedures.',
     result:
-      'Enabled smoother workload transition, improved network agility, reduced MSTP leased bandwidth by 70M, and lowered monthly operating cost by ¥70,000.',
+      'Enabled smoother workload transition, improved network agility, reduced MSTP leased bandwidth by 70M, and lowered monthly operating cost by RMB 70,000.',
     description:
       'Data center migration using H3C 6800 EVPN/VXLAN to preserve internal IP addressing during workload transition.',
     tags: ['EVPN', 'VXLAN', 'H3C', 'IDC'],
@@ -194,10 +248,13 @@ const articles = [
             <a class="button" href={profile.github}>GitHub</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Professional focus">
-          <span>Focus</span>
-          <strong>Reliable networks, clean documentation, faster troubleshooting.</strong>
-          <p>Hybrid cloud networking, SDN, SD-WAN, IDC operations, security controls, and practical automation.</p>
+        <aside class="hero-visual" aria-label="Profile photo and professional focus">
+          <img src="/images/profile-toronto-waterfront.jpg" alt="Dongxu Allen Hu near the Toronto waterfront" />
+          <div class="hero-panel">
+            <span>Focus</span>
+            <strong>Reliable networks, clean documentation, faster troubleshooting.</strong>
+            <p>Hybrid cloud networking, SDN, SD-WAN, IDC operations, security controls, and practical automation.</p>
+          </div>
         </aside>
       </section>
 
@@ -208,6 +265,16 @@ const articles = [
             <span>{metric.label}</span>
           </article>
         ))}
+      </section>
+
+      <section class="section split certs-feature">
+        <div>
+          <p class="eyebrow">Credentials</p>
+          <h2>Certifications</h2>
+        </div>
+        <ul class="cert-list">
+          {certifications.map((cert) => <li>{cert}</li>)}
+        </ul>
       </section>
 
       <section class="section" id="skills">
@@ -227,7 +294,7 @@ const articles = [
         </div>
       </section>
 
-      <section class="section" id="experience">
+      <section class="section" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Selected Work</p>
           <h2>Case Studies</h2>
@@ -255,7 +322,7 @@ const articles = [
         </div>
       </section>
 
-      <section class="section" id="projects">
+      <section class="section" id="experience">
         <div class="section-heading">
           <p class="eyebrow">Career Timeline</p>
           <h2>Experience</h2>
@@ -267,10 +334,13 @@ const articles = [
                 <h3>{job.title}</h3>
                 <p>{job.company}</p>
               </div>
-              <span>{job.period}</span>
+              <time datetime={job.period}>{job.period}</time>
               <ul>
                 {job.bullets.map((bullet) => <li>{bullet}</li>)}
               </ul>
+              <div class="timeline-stack">
+                {job.stack.map((item) => <span>{item}</span>)}
+              </div>
             </article>
           ))}
         </div>
@@ -289,16 +359,6 @@ const articles = [
             </a>
           ))}
         </div>
-      </section>
-
-      <section class="section split">
-        <div>
-          <p class="eyebrow">Credentials</p>
-          <h2>Certifications</h2>
-        </div>
-        <ul class="cert-list">
-          {certifications.map((cert) => <li>{cert}</li>)}
-        </ul>
       </section>
 
       <section class="section split">
@@ -398,7 +458,7 @@ const articles = [
     align-items: center;
     display: grid;
     gap: 40px;
-    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
     min-height: clamp(560px, calc(100vh - 72px), 760px);
     padding: 48px 0;
   }
@@ -487,6 +547,23 @@ const articles = [
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: 0 18px 40px rgba(24, 33, 31, 0.06);
+  }
+
+  .hero-visual {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  .hero-visual img {
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(24, 33, 31, 0.08);
+    display: block;
+    object-fit: cover;
+    object-position: 54% 46%;
+    width: 100%;
   }
 
   .hero-panel {
@@ -644,14 +721,31 @@ const articles = [
   .timeline-item {
     display: grid;
     gap: 20px;
-    grid-template-columns: minmax(180px, 0.8fr) 150px minmax(0, 1.8fr);
+    grid-template-columns: minmax(190px, 0.75fr) 150px minmax(0, 1.4fr) minmax(180px, 0.85fr);
     padding: 24px;
     min-width: 0;
   }
 
-  .timeline-item > span {
+  .timeline-item time {
     color: var(--accent-dark);
     font-weight: 800;
+  }
+
+  .timeline-stack {
+    align-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .timeline-stack span {
+    background: #f5f7f3;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: #2f4842;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 6px 9px;
   }
 
   ul {
