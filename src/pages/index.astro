@@ -217,6 +217,14 @@ const periodPoints = (period: string) => {
   const [start, end] = period.split(' - ');
   return { start, end };
 };
+
+const shouldShowEndPoint = (index: number) => {
+  if (index === 0) {
+    return true;
+  }
+
+  return periodPoints(experiences[index - 1].period).start !== periodPoints(experiences[index].period).end;
+};
 ---
 
 <html lang="en">
@@ -333,10 +341,10 @@ const periodPoints = (period: string) => {
           <h2>Experience</h2>
         </div>
         <div class="timeline">
-          {experiences.map((job) => (
+          {experiences.map((job, index) => (
             <article class="timeline-item">
               <div class="timeline-date">
-                <time class="time-point time-end">{periodPoints(job.period).end}</time>
+                {shouldShowEndPoint(index) && <time class="time-point time-end">{periodPoints(job.period).end}</time>}
                 <time class="time-point time-start">{periodPoints(job.period).start}</time>
               </div>
               <div class="timeline-content">
