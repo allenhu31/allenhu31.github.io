@@ -1,78 +1,112 @@
 ---
 const profile = {
-  name: 'Allen Hu',
-  role: 'Network Engineer',
+  name: 'Dongxu (Allen) Hu',
+  role: 'Senior Network Engineer',
   location: 'Toronto, Canada',
   summary:
-    'I build reliable networks, troubleshoot production issues, and document systems so teams can operate with confidence.',
-  email: 'your.email@example.com',
+    'Senior network engineer and network architect with experience in large-scale enterprise networks, hybrid cloud connectivity, SDN, SD-WAN, security operations, automation, and 24/7 infrastructure reliability.',
+  email: 'hudongxu31@gmail.com',
   linkedin: 'https://www.linkedin.com/in/your-linkedin/',
-  github: 'https://github.com/your-github-username',
+  github: 'https://github.com/allenhu31',
 };
 
 const skills = [
   {
     group: 'Networking',
-    items: ['Routing', 'Switching', 'VLANs', 'VPN', 'Firewall', 'TCP/IP', 'DNS', 'DHCP'],
+    items: ['BGP', 'OSPF', 'EIGRP', 'MPLS', 'VLAN', 'STP', 'VPN', 'NAT', 'DHCP', 'QoS', 'VRRP'],
   },
   {
-    group: 'Systems',
-    items: ['Windows Server', 'Linux', 'Active Directory', 'VMware', 'Microsoft 365'],
+    group: 'Cloud & SDN',
+    items: ['AWS', 'GCP', 'Huawei Cloud', 'VMware NSX', 'H3C Fabric', 'VXLAN', 'SD-WAN'],
   },
   {
-    group: 'Tools',
-    items: ['Wireshark', 'PuTTY', 'Tftpd64', 'GitHub', 'PowerShell', 'Python'],
+    group: 'Automation & Platforms',
+    items: ['Python', 'Golang', 'Ansible', 'CI/CD', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana', 'Zabbix'],
   },
   {
-    group: 'Operations',
-    items: ['Incident response', 'Monitoring', 'Documentation', 'Change management'],
+    group: 'Security & Troubleshooting',
+    items: ['Cisco ASA', 'Fortinet', 'Palo Alto', 'WAF', 'DDoS Protection', 'IDS/IPS', 'Wireshark', 'Tcpdump', 'MTR'],
   },
 ];
 
 const experiences = [
   {
-    title: 'Network Engineer',
-    company: 'Company Name',
-    period: '2023 - Present',
+    title: 'Senior Engineer',
+    company: 'China Resources Gas Co., Ltd - Zhongshan, China',
+    period: 'Jan 2023 - Feb 2024',
     bullets: [
-      'Supported LAN/WAN operations across routing, switching, wireless, VPN, and firewall environments.',
-      'Troubleshot connectivity, DNS, DHCP, and endpoint access issues across Windows and network systems.',
-      'Improved repeatable operational work with clear documentation and PowerShell-based checks.',
+      'Managed hybrid network infrastructure for 270+ member companies, connecting enterprise networks, IDC data centers, Huawei Cloud, and AWS through BGP/MPLS telecom backbone services.',
+      'Led daily operations for BGP/MPLS, OSPF, Cisco firewalls, ACL policies, route policies, and public cloud connectivity, maintaining 99.9% business availability.',
+      'Optimized AWS and Huawei Cloud security operations across VPC, EC2, IAM, Lambda, WAF, security groups, Route 53, VPC Peering, ELB, and cloud database security.',
+      'Implemented IAM role-based access control and security policy improvements, reducing intrusion-detection false positives by 15%.',
     ],
   },
   {
-    title: 'IT Support / Infrastructure Specialist',
-    company: 'Company Name',
-    period: 'Previous Role',
+    title: 'Network Architect',
+    company: 'Sangfor Technologies Inc. - Shenzhen, China',
+    period: 'Jan 2021 - Dec 2022',
     bullets: [
-      'Handled user support, device setup, software troubleshooting, and escalation for infrastructure issues.',
-      'Maintained internal tools and reduced recurring problems through clearer procedures and checklists.',
+      'Led VMware NSX-T deployment and upgrade in a new data center, replacing NSX-V and integrating vCenter Server, ESXi transport nodes, NSX Edge, and NSX Manager.',
+      'Optimized switching, routing, load balancing, firewalling, VPN services, and SDN troubleshooting practices for the engineering team.',
+      'Led WAN optimization for 200+ global sites connected to headquarters, replacing traditional BGP dual-line backup with Fortinet SD-WAN.',
+      'Improved availability from 99% to 99.9% and reduced annual operational costs by more than ¥6 million RMB through smarter redundancy and bandwidth usage.',
+    ],
+  },
+  {
+    title: 'Senior Network Engineer',
+    company: 'Kingsoft Seasun - Zhuhai, China',
+    period: 'Aug 2015 - Jan 2021',
+    bullets: [
+      'Expanded the network operations team from 2 to 7 members, adding network engineers, a monitoring engineer, and 24/7 monitoring operators.',
+      'Built Python automation with Paramiko, Netmiko, and Zabbix API for configuration backup, routine maintenance, and traffic reporting; contributed to CMDB migration from Python to Golang.',
+      'Deployed Kubernetes and migrated website services from VMs to Kubernetes, improving resource utilization by 40% and reducing deployment time by 70%.',
+      'Led IDC network optimization across Beijing, Shanghai, and Guangzhou POP sites, using OSPF path control to reduce MSTP leased bandwidth by 70M and save ¥70,000 per month.',
+      'Designed H3C EVPN/VXLAN migration and SDN Fabric architecture, plus disaster recovery drills for a Guangzhou IDC with 180+ racks and dual ISP uplinks.',
     ],
   },
 ];
 
 const projects = [
   {
-    name: 'Home Media Server',
+    name: 'Hybrid Cloud Network Operations',
     description:
-      'Built a local Jellyfin media service on Windows for Mac, phone, and TV access across the home network.',
-    tags: ['Windows', 'Jellyfin', 'Firewall', 'LAN'],
+      'Enterprise-to-cloud network operations across IDC, AWS, Huawei Cloud, BGP/MPLS, firewalls, WAF, and IAM security controls.',
+    tags: ['BGP/MPLS', 'AWS', 'Huawei Cloud', 'WAF'],
   },
   {
-    name: 'Network Troubleshooting Toolkit',
+    name: 'Global SD-WAN Optimization',
     description:
-      'A personal collection of PowerShell commands, packet-capture notes, and repeatable checks for network diagnosis.',
-    tags: ['PowerShell', 'Wireshark', 'DNS', 'DHCP'],
+      'Fortinet SD-WAN migration for 200+ global sites, improving failover behavior, centralizing traffic management, and cutting annual costs.',
+    tags: ['Fortinet', 'SD-WAN', 'BGP', 'WAN'],
   },
   {
-    name: 'Portfolio Website',
+    name: 'IDC EVPN/VXLAN Migration',
     description:
-      'This Astro and GitHub Pages site for presenting technical experience, projects, and contact links.',
-    tags: ['Astro', 'GitHub Pages', 'HTML', 'CSS'],
+      'Data center migration using H3C 6800 EVPN/VXLAN to preserve internal IP addressing during workload transition.',
+    tags: ['EVPN', 'VXLAN', 'H3C', 'IDC'],
+  },
+  {
+    name: 'Network Automation & CMDB',
+    description:
+      'Automation for device backups, traffic reporting, and operations workflows using Python, Netmiko, Paramiko, Zabbix API, and Golang CMDB improvements.',
+    tags: ['Python', 'Golang', 'Zabbix API', 'CMDB'],
   },
 ];
 
-const certifications = ['CCNA - planned or completed', 'Microsoft / Azure - optional', 'Security+ - optional'];
+const certifications = [
+  'AWS Certified Advanced Networking - Specialty, July 2025',
+  'AWS Certified Solutions Architect - Associate, July 2025',
+  'Oracle AI Vector Search Certified Professional, July 2025',
+  'MySQL 8.0 Database Administrator, June 2025',
+  'Oracle Cloud Infrastructure Certified Architect Associate, Sep 2023',
+  'VMware Certified Professional, Mar 2013',
+  'Cisco Certified Network Professional, Dec 2008',
+];
+
+const education = [
+  'Guangxi Normal University - Master in Business Administration, June 2018',
+  'Hunan College of Information - Electrical Automation, June 2009',
+];
 ---
 
 <html lang="en">
@@ -101,7 +135,7 @@ const certifications = ['CCNA - planned or completed', 'Microsoft / Azure - opti
         <div class="hero-copy">
           <p class="eyebrow">{profile.location}</p>
           <h1>{profile.name}</h1>
-          <p class="role">{profile.role} / IT Infrastructure</p>
+          <p class="role">{profile.role} / Network Architect / Cloud Networking</p>
           <p class="summary">{profile.summary}</p>
           <div class="actions">
             <a class="button primary" href={`mailto:${profile.email}`}>Email Me</a>
@@ -112,7 +146,7 @@ const certifications = ['CCNA - planned or completed', 'Microsoft / Azure - opti
         <aside class="hero-panel" aria-label="Professional focus">
           <span>Focus</span>
           <strong>Reliable networks, clean documentation, faster troubleshooting.</strong>
-          <p>LAN/WAN operations, firewall access, endpoint connectivity, and practical automation.</p>
+          <p>Hybrid cloud networking, SDN, SD-WAN, IDC operations, security controls, and practical automation.</p>
         </aside>
       </section>
 
@@ -179,6 +213,16 @@ const certifications = ['CCNA - planned or completed', 'Microsoft / Azure - opti
         </div>
         <ul class="cert-list">
           {certifications.map((cert) => <li>{cert}</li>)}
+        </ul>
+      </section>
+
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Education</p>
+          <h2>Education</h2>
+        </div>
+        <ul class="cert-list">
+          {education.map((item) => <li>{item}</li>)}
         </ul>
       </section>
 
@@ -296,8 +340,8 @@ const certifications = ['CCNA - planned or completed', 'Microsoft / Azure - opti
   }
 
   h1 {
-    font-size: clamp(3.3rem, 9vw, 7.8rem);
-    line-height: 0.92;
+    font-size: clamp(3rem, 7.2vw, 5.8rem);
+    line-height: 1;
     margin-bottom: 18px;
   }
 
