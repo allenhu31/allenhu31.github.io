@@ -19,6 +19,38 @@ const metrics = [
   { value: 'RMB 6M+', label: 'annual cost reduction from WAN optimization' },
 ];
 
+const strengths = [
+  {
+    title: 'Network Architecture & Security',
+    points: [
+      '10+ years of network architecture and troubleshooting experience across SDN, SD-WAN, private cloud, BGP/MPLS backbone, hosted IDC, and office networks.',
+      'Led major network change planning, migration windows, IDC buildouts, optimization projects, operations processes, bidding documents, and delivery control.',
+      'Deep hands-on experience with routing, switching, load balancing, firewalls, WAF, DDoS protection, IDS/IPS, zero-trust platforms, security audit, hardening, and compliance work.',
+    ],
+  },
+  {
+    title: 'Cloud & Virtualization',
+    points: [
+      'Experienced in hybrid cloud operations, including capacity management, monitoring, network architecture, AWS-to-DC connectivity, and Alibaba Cloud CEN integration.',
+      'Designed and operated hosted cloud and hyper-converged environments, including delivery standards, expansion planning, and operations workflows.',
+    ],
+  },
+  {
+    title: 'Containers & Kubernetes',
+    points: [
+      'Familiar with Docker and Kubernetes operations, including migrating the Kingsoft Seasun official website from a traditional network environment to IDC-hosted Kubernetes.',
+      'Studied Kubernetes networking models such as Flannel host-gw, Flannel VXLAN, Calico, ETCD networking, and compared them with H3C EVPN network architecture.',
+    ],
+  },
+  {
+    title: 'Programming & Automation',
+    points: [
+      'Use Python libraries such as Pexpect, Paramiko, and Netmiko to simplify daily network operations with automation scripts.',
+      'Participated in rebuilding a CMDB asset management system with Go to improve infrastructure operations and asset data management.',
+    ],
+  },
+];
+
 const skills = [
   {
     group: 'Networking',
@@ -257,6 +289,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
         <div class="hero-copy">
           <p class="eyebrow">{profile.location}</p>
           <h1>{profile.name}</h1>
+          <a class="hero-email" href={`mailto:${profile.email}`}>{profile.email}</a>
           <p class="role">{profile.role} / Network Architect / Cloud Networking</p>
           <p class="summary">{profile.summary}</p>
         </div>
@@ -277,6 +310,29 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
             <span>{metric.label}</span>
           </article>
         ))}
+      </section>
+
+      <section class="section strengths" id="strengths">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Strengths</p>
+            <h2>Professional Highlights</h2>
+          </div>
+        </div>
+        <p class="strengths-intro">
+          I bring more than ten years of network architecture experience, with hands-on Python and Go automation skills
+          and practical exposure to business operations, Kubernetes, virtualization, and hybrid cloud environments.
+        </p>
+        <div class="strength-grid">
+          {strengths.map((strength) => (
+            <article class="strength-card">
+              <h3>{strength.title}</h3>
+              <ul>
+                {strength.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section class="section split certs-feature">
@@ -537,6 +593,14 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     margin-bottom: 20px;
   }
 
+  .hero-email {
+    color: var(--accent-dark);
+    display: inline-block;
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin: -2px 0 20px;
+  }
+
   .summary {
     color: var(--muted);
     font-size: 1.16rem;
@@ -634,6 +698,49 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     display: block;
     font-weight: 700;
     line-height: 1.45;
+  }
+
+  .strengths {
+    padding-top: 64px;
+  }
+
+  .strengths-intro {
+    color: var(--muted);
+    font-size: 1.18rem;
+    line-height: 1.7;
+    margin: -8px 0 24px;
+    max-width: 1040px;
+  }
+
+  .strength-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .strength-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(24, 33, 31, 0.06);
+    min-width: 0;
+    padding: 26px;
+  }
+
+  .strength-card h3 {
+    color: var(--accent-dark);
+    font-size: 1.18rem;
+  }
+
+  .strength-card ul {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .strength-card li + li {
+    margin-top: 10px;
   }
 
   .section-heading {
@@ -1124,6 +1231,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     .skill-grid,
     .project-grid,
     .metrics,
+    .strength-grid,
     .case-grid,
     .hobby-grid {
       grid-template-columns: 1fr;
