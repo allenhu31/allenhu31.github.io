@@ -136,14 +136,27 @@ const certifications = [
 
 const education = [
   'Guangxi Normal University - Master in Business Administration, June 2018',
-  'Hunan College of Information - Electrical Automation, June 2009',
 ];
 
-const writingIdeas = [
-  'BGP/MPLS hybrid cloud operations notes',
-  'Fortinet SD-WAN migration lessons learned',
-  'EVPN/VXLAN data center migration design',
-  'Network automation with Python, Netmiko, and Zabbix API',
+const articles = [
+  {
+    title: 'How I Troubleshoot BGP Route Flapping in a Production Network',
+    description:
+      'A practical troubleshooting workflow for route instability, including symptoms, evidence collection, peer checks, policy review, and safe remediation.',
+    href: '/writing/bgp-route-flapping/',
+  },
+  {
+    title: 'Designing Hybrid Cloud Networking Between On-Prem and AWS',
+    description:
+      'Design notes for connecting enterprise networks, data centers, and AWS with attention to routing, segmentation, security, observability, and failure domains.',
+    href: '/writing/hybrid-cloud-networking-aws/',
+  },
+  {
+    title: 'From Traditional Network Engineer to Cloud Network Engineer',
+    description:
+      'A field-oriented view of how routing, security, automation, and operations skills evolve when moving from hardware-centric networks to cloud networking.',
+    href: '/writing/traditional-to-cloud-network-engineer/',
+  },
 ];
 ---
 
@@ -265,12 +278,17 @@ const writingIdeas = [
 
       <section class="section split">
         <div>
-          <p class="eyebrow">Writing Backlog</p>
-          <h2>Topics I Can Write About</h2>
+          <p class="eyebrow">Writing</p>
+          <h2>Technical Articles</h2>
         </div>
-        <ul class="cert-list">
-          {writingIdeas.map((topic) => <li>{topic}</li>)}
-        </ul>
+        <div class="article-list">
+          {articles.map((article) => (
+            <a class="article-link" href={article.href}>
+              <span>{article.title}</span>
+              <p>{article.description}</p>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section class="section split">
@@ -660,6 +678,32 @@ const writingIdeas = [
     border-radius: 8px;
     list-style: none;
     padding: 22px 26px;
+  }
+
+  .article-list {
+    display: grid;
+    gap: 14px;
+  }
+
+  .article-link {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    display: block;
+    padding: 20px 22px;
+  }
+
+  .article-link span {
+    display: block;
+    font-size: 1.08rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .article-link p {
+    color: var(--muted);
+    line-height: 1.58;
+    margin: 0;
   }
 
   .contact {

@@ -1,0 +1,63 @@
+---
+const title = 'From Traditional Network Engineer to Cloud Network Engineer';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Dongxu (Allen) Hu</title>
+    <meta name="description" content="A practical view of moving from traditional network engineering to cloud network engineering." />
+  </head>
+  <body>
+    <main class="article">
+      <a class="back" href="/">Back to homepage</a>
+      <p class="eyebrow">Career Growth</p>
+      <h1>{title}</h1>
+      <p class="lead">
+        Cloud networking did not replace traditional networking for me. It expanded the surface area. The fundamentals still matter, but the operating model changes.
+      </p>
+
+      <h2>The Fundamentals Still Transfer</h2>
+      <p>
+        Routing, segmentation, high availability, DNS, latency, MTU, packet capture, and failure analysis remain relevant. A cloud route table is still a route table. A security group is still an access-control decision. A load balancer still depends on health checks and reachability.
+      </p>
+
+      <h2>The Abstractions Change</h2>
+      <p>
+        In traditional environments, engineers often work directly with switches, routers, firewalls, and circuits. In cloud environments, many of those controls are expressed through VPCs, subnets, route tables, gateways, IAM, security groups, managed firewalls, and APIs. The skill is learning where the real packet path lives behind the abstraction.
+      </p>
+
+      <h2>Automation Becomes Normal</h2>
+      <p>
+        Manual CLI work still has value for troubleshooting, but repeatable cloud networking should be automated. Infrastructure-as-code, scripts, CI/CD checks, tagging, and inventory systems reduce drift and make changes easier to review. My background in Python and network automation helped make that transition natural.
+      </p>
+
+      <h2>Security Moves Closer to Design</h2>
+      <p>
+        In cloud networking, security cannot be added only at the perimeter. IAM, route isolation, workload segmentation, logging, encryption, and least-privilege access are part of the network design. This requires network engineers to work more closely with platform, security, and application teams.
+      </p>
+
+      <h2>Troubleshooting Becomes Cross-Domain</h2>
+      <p>
+        A cloud connectivity issue may involve DNS, a security group, a NACL, a route table, a gateway, a provider circuit, an application health check, or IAM permissions. The engineer has to move across domains without losing the discipline of packet-path thinking.
+      </p>
+
+      <h2>My Practical Advice</h2>
+      <p>
+        Keep the networking fundamentals sharp, learn the cloud provider primitives deeply, automate what repeats, and document the intent behind each design. The strongest cloud network engineers are not only cloud users; they are network engineers who understand how cloud platforms express network behavior.
+      </p>
+    </main>
+  </body>
+</html>
+
+<style>
+  body { margin: 0; background: #f7f8f3; color: #18211f; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .article { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
+  .back { color: #0f766e; font-weight: 800; text-decoration: none; }
+  .eyebrow { color: #115e59; font-size: .78rem; font-weight: 900; margin-top: 44px; text-transform: uppercase; }
+  h1 { font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; margin: 12px 0 22px; }
+  h2 { border-top: 1px solid #d9ded7; font-size: 1.45rem; margin: 42px 0 14px; padding-top: 28px; }
+  p { color: #4f5d58; font-size: 1.06rem; line-height: 1.75; }
+  .lead { color: #2f4842; font-size: 1.22rem; }
+</style>
