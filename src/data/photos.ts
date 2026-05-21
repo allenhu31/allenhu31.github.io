@@ -1,0 +1,37 @@
+export const photos = [
+  'photo-01-2018-07-01-11-57-img-1575.jpg',
+  'photo-02-2019-07-24-12-48-img-7079.jpg',
+  'photo-03-2020-07-05-15-02-img-8458.jpg',
+  'photo-04-2020-11-01-12-32-img-8804.jpg',
+  'photo-05-2022-08-21-15-40-img-2018.jpg',
+  'photo-06-2023-10-31-12-05-img-4158.jpg',
+  'photo-07-2024-03-19-08-33-img-4763.jpg',
+  'photo-08-2024-09-04-02-43-img-5770.jpg',
+  'photo-09-2024-11-01-21-21-img-6614.jpg',
+  'photo-10-2025-01-14-13-07-img-6986.jpg',
+  'photo-11-2025-03-19-19-10-img-7305.jpg',
+  'photo-12-2025-03-26-16-53-img-7379.jpg',
+  'photo-13-2025-03-27-19-03-img-7443.jpg',
+  'photo-14-2025-04-14-19-55-img-7503.jpg',
+  'photo-15-2025-06-23-18-03-img-7802.jpg',
+  'photo-16-2025-07-19-12-50-img-7961.jpg',
+  'photo-17-2025-08-04-15-07-img-8240.jpg',
+  'photo-18-2025-08-31-11-00-img-8459.jpg',
+  'photo-19-2025-08-31-19-30-img-8466.jpg',
+  'photo-20-dji-0090.jpg',
+  'photo-21-dji-0134.jpg',
+  'photo-22-dji-0221.jpg',
+  'photo-23-dji-0320.jpg',
+  'photo-24-dji-0339.jpg',
+  'photo-25-dji-0670.jpg',
+  'photo-26-dji-0759.jpg',
+].map((file) => {
+  const isDrone = file.includes('dji');
+  return {
+    file,
+    src: `/images/photography/${file}`,
+    thumb: `/images/photography/thumbs/${file}`,
+    type: isDrone ? 'Drone' : 'Camera',
+    alt: isDrone ? 'Drone photography by Dongxu Allen Hu' : 'Camera photography by Dongxu Allen Hu',
+  };
+});
