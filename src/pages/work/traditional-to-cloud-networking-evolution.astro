@@ -1,0 +1,401 @@
+---
+const sections = [
+  {
+    title: '1. Traditional Network Architecture and Forwarding Mechanisms',
+    paragraphs: [
+      'In a traditional network, each network device operates independently. There is no centralized control system across the entire network. Each device is responsible for its own control plane and forwarding plane.',
+      'The control plane is mainly responsible for calculating forwarding paths and generating forwarding tables. The forwarding plane is responsible for forwarding packets at high speed based on those tables.',
+      'Traditional networks are usually built with multiple layers and different types of devices. Access and aggregation switches connect servers and terminate Layer 2 networks. Core routers or Layer 3 switches aggregate routing information across the local network. Border security devices provide perimeter protection between internal and external networks. Servers are usually configured directly with IP addresses.',
+      'Different network layers have different roles, hardware designs, operating systems, and configuration models.',
+    ],
+  },
+  {
+    title: '2. Layer 2 and Layer 3 Networking',
+    paragraphs: [
+      'Traditional networks rely heavily on both Layer 2 and Layer 3 forwarding mechanisms.',
+      'In a Layer 2 network, switches forward traffic based on MAC address tables. When a switch does not know the destination MAC address, it floods the frame. This behavior is useful for basic connectivity, but it also creates risks when redundant links form loops.',
+      'To prevent Layer 2 loops and broadcast storms, traditional networks use STP, or Spanning Tree Protocol. STP blocks redundant paths and activates them only when the primary path fails. While this improves redundancy, it also reduces link utilization because some physical links remain blocked during normal operation.',
+      'In a Layer 3 network, routers forward traffic based on IP routing tables. If a matching route exists, the packet is forwarded to the next hop. If no matching route exists, the packet is dropped. Layer 3 networks are generally more suitable for large-scale interconnection because routing protocols can calculate paths dynamically and avoid many of the loop-related risks found in Layer 2 networks.',
+      'In short, Layer 2 networks are often better suited for server access environments, while Layer 3 networks are better suited for large-scale network interconnection.',
+    ],
+  },
+  {
+    title: '3. Why Cloud Networking Is Different',
+    paragraphs: [
+      'Cloud environments introduced new requirements that traditional networks were not originally designed to handle.',
+      'In a traditional IDC environment, different customers or projects could often be handled through separate physical or logical network designs. However, in a cloud environment, the same physical infrastructure must support many tenants with different and highly customized network requirements.',
+      'At the same time, server virtualization introduced a new type of network element: the virtual switch inside the physical server. This means that part of the network no longer exists only in physical switches and routers. It also exists in software inside the compute layer.',
+    ],
+    bullets: [
+      'Tenant isolation: different users network resources must be isolated from each other, and each user may also need internal isolation between different services.',
+      'Flexible network configuration: tenants may need to define their own IP ranges, subnets, VLANs, gateways, and security rules.',
+      'Diverse network services: in addition to basic VM connectivity, tenants may need firewalls, load balancers, public IP binding, bandwidth control, VPN, and other advanced network services.',
+      'Automation: cloud services are ordered and provisioned dynamically, so network configuration can no longer depend only on manual CLI operations.',
+    ],
+  },
+  {
+    title: '4. Challenges Observed in the China Mobile Cloud Network',
+    paragraphs: [
+      'At that time, China Mobile Cloud used different technical approaches to support tenant isolation and cloud network provisioning.',
+      'In the early stage, tenant isolation was mainly implemented through VLAN plus firewall. However, this made multi-VLAN communication within the same tenant difficult.',
+      'After the second-phase network upgrade, the design moved toward VLAN plus VRF. VRF works like virtualizing one physical router into multiple logical routers, with each logical router maintaining its own routing table. While this improved isolation, it also made configuration and maintenance more complex.',
+      'Compared with some industry cloud data centers, where virtual networking functions were increasingly implemented at the server edge through software switches and overlay networks, China Mobile Cloud still relied heavily on core physical network devices to implement many tenant-facing network functions.',
+    ],
+    bullets: [
+      'VM gateways were created on core switches.',
+      'Tenant isolation relied on VLAN and VRF configurations.',
+      'Public IP binding and firewall rules were configured on physical firewall devices.',
+      'Bandwidth policies were configured on border routers.',
+      'Some services, such as site-to-site VPN and dedicated line access, still required offline manual configuration by operations engineers.',
+    ],
+    closing:
+      'This design created a major operational challenge: core network devices had to participate frequently in service provisioning changes. Frequent changes on core devices increased operational risk and could affect platform stability.',
+  },
+  {
+    title: '5. Virtual Switches and Operational Complexity',
+    paragraphs: [
+      'After compute virtualization, virtual switches became part of the cloud network. However, virtual switches and physical network devices did not form a unified resource management system.',
+      'Commercial virtual switches, such as Cisco Nexus 1000V or similar products, provided interfaces and management models closer to traditional network devices, but they usually depended on specific virtualization platforms and often required additional licensing.',
+      'Open-source virtual switches, such as OVS, were more closely aligned with OpenStack-style cloud architectures, but troubleshooting and bug resolution could be slower.',
+      'In the China Mobile Cloud environment, simple open-source virtual bridges were used. These bridges provided basic forwarding functions, but lacked a unified management interface and advanced operational capabilities.',
+      'As a result, cloud service provisioning and troubleshooting became more complicated because the network was split between two systems: the virtual network inside servers, and the physical network built on switches, routers, and firewalls.',
+    ],
+  },
+  {
+    title: '6. Layer 2 Optimization and the Limits of Enhanced Layer 2 Technologies',
+    paragraphs: [
+      'Cloud environments often require VM migration while keeping the IP address unchanged. This creates a strong need for a larger Layer 2 domain.',
+      'However, traditional Layer 2 networks have well-known limitations. Broadcast traffic, loop risks, and blocked links caused by STP make large Layer 2 networks difficult to scale and operate efficiently.',
+      'To address these challenges, vendors introduced enhanced Layer 2 technologies such as Cisco vPC and Huawei/H3C IRF.',
+      'These technologies improve link utilization and redundancy by making multiple physical links or devices appear as a logical unit.',
+      'However, from an architectural perspective, enhanced Layer 2 technologies are not a complete transformation. They are often vendor-specific technologies built on top of traditional Layer 2 mechanisms. They reduce some STP limitations, but also introduce new complexity, especially in multi-vendor environments.',
+      'The key takeaway is that enhanced Layer 2 technologies can improve traditional networks, but they do not fundamentally solve the architectural challenges of cloud networking.',
+    ],
+  },
+  {
+    title: '7. Automation Challenges in Cloud Network Provisioning',
+    paragraphs: [
+      'In a traditional network, most network configurations are completed during the construction phase. After that, the network usually remains relatively stable.',
+      'In a cloud environment, this changes completely. Tenants can order, modify, and delete cloud services at any time. The network is no longer just a static transport layer. It becomes part of the service provisioning process.',
+      'At that time, China Mobile Cloud still relied heavily on traditional CLI-based automation. This means that the management platform simulated human operations: logging in to devices, entering commands, applying configurations, and exiting.',
+    ],
+    bullets: [
+      'It lacked intelligent validation.',
+      'It was easy to trigger configuration errors.',
+      'Configuration efficiency was limited.',
+      'Flexibility was poor.',
+      'Frequent configuration changes on core network devices reduced platform stability.',
+    ],
+    closing:
+      'In cloud networking, automation should not simply imitate manual CLI operations. A better approach is to provide programmable interfaces, unified resource models, and clear separation between service logic and physical infrastructure.',
+  },
+  {
+    title: '8. Current Network Segmentation in China Mobile Cloud',
+    paragraphs: [
+      'The China Mobile Cloud environment was divided into three major networks: management network, storage network, and service network.',
+      'The management network was used for service provisioning, service cancellation, monitoring, and alarm traffic. The storage network carried IP SAN and EBS block storage traffic. The service network carried virtual machine service traffic.',
+      'Although the platform had around 1,000 physical servers, each server had multiple network cards for management, storage, and service traffic. From a network perspective, this was equivalent to operating a much larger environment.',
+      'The service network was the most complex part because it carried VM traffic and included both physical and software-based network elements.',
+    ],
+  },
+  {
+    title: '9. Network Virtualization Technologies',
+    paragraphs: [
+      'The technical sharing also discussed four major directions in network virtualization.',
+      'OpenFlow-based SDN separates the control plane from the forwarding plane. A centralized controller collects network information, calculates forwarding behavior, and programs network devices through a southbound protocol such as OpenFlow. This model provides a clean theoretical architecture, but it requires network devices to support flow-table-based forwarding and often involves major changes to the existing network infrastructure.',
+      'Open API-based SDN allows controllers to manage different types of network devices through open APIs, CLI, SNMP, or vendor-defined interfaces. This approach is more practical for existing networks because it can integrate both traditional and SDN-capable devices.',
+      'Overlay networking builds virtual logical networks on top of the existing physical network through tunneling technologies such as VXLAN, NVGRE, or STT. The physical network mainly provides IP connectivity, while tenant networks are created at the software layer. Overlay networking is especially suitable for cloud environments because it allows tenant networks to be created and modified without frequently changing the physical core network.',
+      'NFV moves network functions from dedicated hardware appliances to software running on general-purpose servers. Functions such as firewalls, load balancers, routers, and security inspection systems can be deployed as virtual network functions. Its key value is transforming network devices from dedicated hardware boxes into software-based services.',
+    ],
+  },
+  {
+    title: '10. Recommended Evolution Path',
+    paragraphs: [
+      'Based on the challenges observed in the existing cloud network, the future evolution of China Mobile Cloud networking should move toward greater abstraction, automation, and virtualization.',
+      'A more scalable cloud network architecture should reduce frequent configuration changes on core devices and move tenant-specific network services closer to the server edge or virtualized network layer.',
+    ],
+    bullets: [
+      'Use overlay networks to decouple tenant networks from the physical infrastructure.',
+      'Introduce Open API-based management for better automation.',
+      'Gradually adopt NFV for firewall, load balancing, VPN, and other network services.',
+      'Reduce dependence on large Layer 2 domains.',
+      'Simplify the role of the physical network so that it mainly provides stable, high-performance IP connectivity.',
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Technical sharing article about the evolution from traditional networking to cloud networking, SDN, overlay networking, NFV, and China Mobile Cloud architecture challenges."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Traditional Networking to Cloud Networking | Dongxu Allen Hu</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Dongxu (Allen) Hu</a>
+      <nav aria-label="Main navigation">
+        <a href="/#experience">Experience</a>
+        <a href="/#projects">Case Studies</a>
+        <a href="/photography/">Photography</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="article-hero">
+        <p class="eyebrow">Technical Sharing</p>
+        <h1>From Traditional Networking to Cloud Networking: Architecture Challenges and Virtualization Evolution</h1>
+        <p>
+          In October 2014, I delivered an internal technical sharing session at the Southern Base Network Management
+          Support Center, focusing on the evolution from traditional networking to cloud networking.
+        </p>
+      </section>
+
+      <section class="intro-grid">
+        <article class="article-card primary">
+          <p>
+            The presentation covered traditional network mechanisms, the challenges introduced by cloud environments,
+            network virtualization technologies, and potential evolution paths for China Mobile Cloud.
+          </p>
+          <p>
+            This article summarizes the key ideas from that technical sharing and reflects my hands-on experience in
+            operating and supporting a large-scale cloud network environment.
+          </p>
+        </article>
+        <aside class="article-card summary-card">
+          <p class="eyebrow">Topics</p>
+          <span>Traditional L2/L3 networking</span>
+          <span>Cloud tenant isolation</span>
+          <span>Virtual switches and automation</span>
+          <span>SDN, overlay networking, NFV</span>
+        </aside>
+      </section>
+
+      <section class="article-body">
+        {sections.map((section) => (
+          <article class="article-card">
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((item) => <li>{item}</li>)}
+              </ul>
+            )}
+            {section.closing && <p>{section.closing}</p>}
+          </article>
+        ))}
+
+        <article class="article-card conclusion">
+          <p class="eyebrow">Conclusion</p>
+          <p>
+            This technical sharing was based on my real operational experience in a large-scale cloud network
+            environment. It compared traditional networking with cloud networking, analyzed the limitations of the
+            existing architecture, and explored the direction of network virtualization.
+          </p>
+          <p>
+            The biggest lesson is that cloud networking is not simply about connecting more servers or adding more
+            VLANs. It requires a fundamental shift in architecture.
+          </p>
+          <p>
+            Traditional networks focus on device-level configuration and hop-by-hop forwarding. Cloud networks require
+            tenant isolation, flexible service provisioning, software-defined control, network automation, and scalable
+            virtualized services.
+          </p>
+          <p>
+            A successful cloud network architecture should minimize operational risk on core devices, provide clear
+            resource abstraction, support automated provisioning, and separate tenant-level changes from the physical
+            network foundation.
+          </p>
+          <p>
+            This experience gave me a deeper understanding of data center network design, cloud network operations, SDN,
+            overlay networking, NFV, and the practical challenges of evolving a traditional carrier-grade network toward
+            a cloud-oriented architecture.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f7f8f3;
+    --ink: #18211f;
+    --muted: #64716c;
+    --line: #d9ded7;
+    --panel: #ffffff;
+    --accent: #0f766e;
+    --accent-dark: #115e59;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    align-items: center;
+    backdrop-filter: blur(18px);
+    background: color-mix(in srgb, var(--bg) 84%, transparent);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px clamp(20px, 5vw, 72px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .brand {
+    font-weight: 800;
+  }
+
+  nav {
+    color: var(--muted);
+    display: flex;
+    font-size: 0.94rem;
+    gap: 22px;
+  }
+
+  main {
+    margin: 0 auto;
+    max-width: 1700px;
+    padding: 56px clamp(24px, 4vw, 72px);
+  }
+
+  .article-hero {
+    border-bottom: 1px solid var(--line);
+    padding: 44px 0 38px;
+  }
+
+  .eyebrow {
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 0.96;
+    margin: 0 0 22px;
+    max-width: 1350px;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+
+  p,
+  li {
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.72;
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  .article-hero p {
+    max-width: 1020px;
+  }
+
+  .intro-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-top: 28px;
+  }
+
+  .article-body {
+    display: grid;
+    gap: 18px;
+    padding-top: 22px;
+  }
+
+  .article-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(24, 33, 31, 0.06);
+    padding: 28px;
+  }
+
+  .primary {
+    min-height: 240px;
+  }
+
+  .summary-card {
+    align-content: start;
+    display: grid;
+    gap: 12px;
+  }
+
+  .summary-card span {
+    background: #f5f7f3;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: #2f4842;
+    display: inline-flex;
+    font-weight: 800;
+    padding: 8px 12px;
+  }
+
+  ul {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  li + li {
+    margin-top: 8px;
+  }
+
+  .conclusion {
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
+  }
+
+  @media (max-width: 860px) {
+    .site-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    nav {
+      flex-wrap: wrap;
+    }
+
+    main {
+      padding: 28px 20px;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

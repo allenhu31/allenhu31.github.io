@@ -173,6 +173,11 @@ const experiences = [
       title: 'Case Study: Operating and Troubleshooting a Large-Scale Cisco Nexus-Based Cloud Network',
       href: '/work/nexus-cloud-network-operations/',
     },
+    technicalSharing: {
+      eyebrow: 'Technical Sharing',
+      title: 'From Traditional Networking to Cloud Networking: Architecture Challenges and Virtualization Evolution',
+      href: '/work/traditional-to-cloud-networking-evolution/',
+    },
   },
   {
     title: 'Network Engineer',
@@ -481,7 +486,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
                   {job.stack.map((item) => <span>{item}</span>)}
                 </div>
               </div>
-              {(job.topology || job.caseStudy) && (
+              {(job.topology || job.caseStudy || job.technicalSharing) && (
                 <div class="timeline-side">
                   {job.topology && (
                     <a class="topology-preview" href={job.topology.href}>
@@ -498,6 +503,12 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
                     <a class="timeline-case" href={job.caseStudy.href}>
                       <span>{job.caseStudy.eyebrow}</span>
                       <strong>{job.caseStudy.title}</strong>
+                    </a>
+                  )}
+                  {job.technicalSharing && (
+                    <a class="timeline-case timeline-sharing" href={job.technicalSharing.href}>
+                      <span>{job.technicalSharing.eyebrow}</span>
+                      <strong>{job.technicalSharing.title}</strong>
                     </a>
                   )}
                 </div>
@@ -1157,6 +1168,10 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
   .timeline-case {
     align-self: end;
     margin-top: auto;
+  }
+
+  .timeline-case + .timeline-sharing {
+    margin-top: 0;
   }
 
   .timeline-content::before {
