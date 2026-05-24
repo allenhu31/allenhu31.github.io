@@ -82,13 +82,6 @@ const experiences = [
       'Standardized network architecture and security practices for 270 China Resources Gas member companies.',
       'Optimized the SCADA core network, including firewall rule redesign and Huawei Cloud core network device migration and upgrade.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'Hybrid cloud operations',
-      summary: 'Managed cloud and IDC network connectivity for a large group-company environment.',
-      metrics: ['270 member companies', 'AWS + Huawei Cloud', 'SCADA core network'],
-      tags: ['Hybrid Cloud', 'Firewall ACL', 'WAF'],
-    },
   },
   {
     title: 'Network Architect',
@@ -101,13 +94,6 @@ const experiences = [
       'Defined infrastructure operation processes with delivery, SRE, and hyper-converged R&D teams.',
       'Guided the operations development team on DevOps framework design, including change request systems, CMDB, and workflow systems.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'Hosted cloud backbone',
-      summary: 'Built operations standards for hosted cloud, HCI, CMDB, and SRE-oriented delivery workflows.',
-      metrics: ['45 self-built nodes', '20 partner-built nodes', 'SRE + CMDB'],
-      tags: ['Hosted Cloud', 'HCI', 'SDN'],
-    },
   },
   {
     title: 'Network Architecture & Operations Lead',
@@ -121,13 +107,6 @@ const experiences = [
       'Led security audit, compliance, emergency drills, WAF, firewall, IDS/IPS, and access authentication work.',
       'Rebuilt network documentation, including IP inventory, topology, architecture white papers, and ITSM-based operations processes.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'SD-WAN migration',
-      summary: 'Converted regional routing from traditional BGP dual-line backup into centralized SD-WAN path control.',
-      metrics: ['200+ sites', '50% cost reduction', '3 data centers'],
-      tags: ['SD-WAN', 'BGP', 'Fortinet'],
-    },
   },
   {
     title: 'Network Engineer',
@@ -141,13 +120,6 @@ const experiences = [
       'Developed Python scripts for device configuration backup, traffic weekly reports, and daily operations; participated in Golang-based CMDB and workflow reconstruction.',
       'Built Kubernetes in hosted IDC virtualization environments and supported migration of official website services to containers.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'IDC fabric modernization',
-      summary: 'Modernized game IDC networking with EVPN/VXLAN, automation scripts, and Kubernetes migration support.',
-      metrics: ['Shanghai / Beijing / Guangzhou', 'EVPN/VXLAN', 'Kubernetes migration'],
-      tags: ['H3C 6800', 'Python', 'Golang'],
-    },
   },
   {
     title: 'Network Engineer',
@@ -160,13 +132,6 @@ const experiences = [
       'Connected Beijing Cisco data center, Webex data center, APAC BSS site, media gateway site, and office networks with security policies.',
       'Built the Beijing Zhaowei Webex data center network and APAC BSS network.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'BSS and media gateway buildout',
-      summary: 'Delivered IDC, office, and media gateway network environments with security policy integration.',
-      metrics: ['BSS projects', 'Cisco Webex DC', 'APAC site connectivity'],
-      tags: ['IDC', 'Security Policy', 'Media Gateway'],
-    },
   },
   {
     title: 'Network Engineer',
@@ -180,50 +145,19 @@ const experiences = [
       'Migrated service gateways from Cisco ASA to Nexus 7018, added IDS and traffic scrubbing capabilities, and improved cloud host security protection.',
       'Completed backbone POP construction in Dalian, Wuhan, Changsha, Wuxi, and other cities.',
     ],
-    artifact: {
-      eyebrow: 'Work Snapshot',
-      title: 'BGP/MPLS backbone operations',
-      summary: 'Operated a multi-POP backbone using route policy, AS-PATH, MED, ASA migration, IDS, and traffic scrubbing.',
-      metrics: ['24 POP sites', 'Nexus 7018 migration', 'Traffic scrubbing'],
-      tags: ['BGP/MPLS', 'ASA', 'IDS'],
-    },
   },
   {
     title: 'Network Engineer',
     company: 'China Digital Group - Guangzhou / Hong Kong',
     period: '2009.03 - 2011.11',
-    stack: [
-      'Cisco 3750',
-      'Cisco 2960',
-      'Cisco 4500',
-      'Cisco 5500',
-      'Cisco 12000',
-      'F5 BIG-IP',
-      'Citrix NetScaler',
-      'OSPF',
-      'EIGRP',
-      'STP',
-      'HSRP',
-      'Route Policy',
-      'BGP',
-      'DDoS Protection',
-    ],
+    stack: ['Cisco 3750', 'Cisco 2960', 'F5 BIG-IP', 'Citrix NetScaler', 'OSPF', 'EIGRP', 'STP', 'DDoS Protection'],
     bullets: [
-      'Operated Guangzhou Qixinggang South China IDC and Hong Kong PCCW IDC networks, maintaining more than 200 IDC cabinets and around 500 Cisco switches and routers.',
+      'Operated Guangzhou Qixinggang South China IDC and Hong Kong PCCW IDC networks, including ISP circuits and daily facility network operations.',
       'Designed, configured, and implemented new network requirements for production systems and provided network technical support to internal teams.',
       'Built active/standby load balancing with F5 BIG-IP and NetScaler to remove single points of failure.',
-      'Optimized Layer 2 physical structure, STP, HSRP, route policy, BGP, OSPF, and EIGRP filtering to reduce loop and routing instability risk.',
+      'Optimized Layer 2 physical structure, STP, safety protection, OSPF and EIGRP filtering to reduce loop and instability risk.',
       'Led Hong Kong HGC data center network construction for overseas mail, DNS, and business-critical systems.',
     ],
-    artifact: {
-      eyebrow: 'Topology',
-      title: 'South China IDC backbone',
-      summary: 'Topology summary for the 2009-2011 China Digital Group IDC network and multi-ISP routing environment.',
-      href: '/work/china-digital-idc-topology/',
-      metrics: ['200+ cabinets', '500+ Cisco devices', 'Multi-ISP routing'],
-      tags: ['Cisco 4500/5500/12000', 'HSRP', 'Route Policy', 'BGP'],
-      visual: 'topology',
-    },
   },
 ];
 
@@ -480,44 +414,6 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
                   {job.stack.map((item) => <span>{item}</span>)}
                 </div>
               </div>
-              {
-                job.artifact && (
-                  job.artifact.href ? (
-                    <a class={`timeline-artifact ${job.artifact.visual === 'topology' ? 'topology-artifact' : ''}`} href={job.artifact.href}>
-                      <span class="artifact-eyebrow">{job.artifact.eyebrow}</span>
-                      <strong>{job.artifact.title}</strong>
-                      <p>{job.artifact.summary}</p>
-                      {job.artifact.visual === 'topology' && (
-                        <div class="mini-topology" aria-hidden="true">
-                          <span class="cloud-node">ISP</span>
-                          <span class="core-node">Core</span>
-                          <span class="access-node left">IDC A</span>
-                          <span class="access-node right">IDC B</span>
-                        </div>
-                      )}
-                      <ul class="artifact-metrics">
-                        {job.artifact.metrics.map((metric) => <li>{metric}</li>)}
-                      </ul>
-                      <div class="artifact-tags">
-                        {job.artifact.tags.map((tag) => <span>{tag}</span>)}
-                      </div>
-                      <em>Open full topology</em>
-                    </a>
-                  ) : (
-                    <div class="timeline-artifact">
-                      <span class="artifact-eyebrow">{job.artifact.eyebrow}</span>
-                      <strong>{job.artifact.title}</strong>
-                      <p>{job.artifact.summary}</p>
-                      <ul class="artifact-metrics">
-                        {job.artifact.metrics.map((metric) => <li>{metric}</li>)}
-                      </ul>
-                      <div class="artifact-tags">
-                        {job.artifact.tags.map((tag) => <span>{tag}</span>)}
-                      </div>
-                    </div>
-                  )
-                )
-              }
             </article>
           ))}
         </div>
@@ -1060,181 +956,6 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     grid-column: 3;
   }
 
-  .timeline-artifact {
-    align-self: start;
-    background: color-mix(in srgb, var(--panel) 92%, var(--accent) 8%);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: 0 18px 40px rgba(24, 33, 31, 0.05);
-    display: grid;
-    gap: 14px;
-    grid-column: 3;
-    margin-top: 12px;
-    min-width: 0;
-    padding: 24px;
-    position: relative;
-  }
-
-  .timeline-item:nth-child(even) .timeline-artifact {
-    grid-column: 1;
-  }
-
-  .timeline-artifact::before {
-    background: var(--accent);
-    border-radius: 999px;
-    content: '';
-    height: 2px;
-    left: -42px;
-    opacity: 0.45;
-    position: absolute;
-    top: 36px;
-    width: 34px;
-  }
-
-  .timeline-item:nth-child(even) .timeline-artifact::before {
-    left: auto;
-    right: -42px;
-  }
-
-  .timeline-artifact strong {
-    font-size: 1.28rem;
-    line-height: 1.2;
-  }
-
-  .timeline-artifact p {
-    color: var(--muted);
-    line-height: 1.58;
-    margin: 0;
-  }
-
-  .artifact-eyebrow {
-    color: var(--accent-dark);
-    font-size: 0.76rem;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-
-  .artifact-metrics {
-    display: grid;
-    gap: 8px;
-    list-style: none;
-    padding: 0;
-  }
-
-  .artifact-metrics li {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    color: var(--ink);
-    font-size: 0.95rem;
-    font-weight: 800;
-    margin: 0;
-    padding: 10px 12px;
-  }
-
-  .artifact-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .artifact-tags span {
-    background: #eef4ef;
-    border: 1px solid #dce7df;
-    border-radius: 999px;
-    color: #2f4842;
-    font-size: 0.78rem;
-    font-weight: 800;
-    padding: 6px 9px;
-  }
-
-  .timeline-artifact em {
-    color: var(--accent-dark);
-    font-style: normal;
-    font-weight: 900;
-  }
-
-  .mini-topology {
-    background:
-      linear-gradient(90deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px),
-      linear-gradient(0deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px),
-      var(--panel);
-    background-size: 22px 22px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    height: 190px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .mini-topology::before,
-  .mini-topology::after {
-    background: var(--accent);
-    content: '';
-    height: 3px;
-    left: 50%;
-    opacity: 0.6;
-    position: absolute;
-    top: 50%;
-    transform-origin: left center;
-    width: 130px;
-  }
-
-  .mini-topology::before {
-    transform: rotate(28deg);
-  }
-
-  .mini-topology::after {
-    transform: rotate(152deg);
-  }
-
-  .cloud-node,
-  .core-node,
-  .access-node {
-    align-items: center;
-    background: var(--panel);
-    border: 2px solid var(--accent);
-    border-radius: 999px;
-    color: var(--accent-dark);
-    display: flex;
-    font-size: 0.78rem;
-    font-weight: 900;
-    justify-content: center;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .cloud-node {
-    height: 42px;
-    left: 50%;
-    top: 18px;
-    transform: translateX(-50%);
-    width: 84px;
-  }
-
-  .core-node {
-    border-radius: 8px;
-    height: 52px;
-    left: 50%;
-    top: 74px;
-    transform: translateX(-50%);
-    width: 88px;
-  }
-
-  .access-node {
-    bottom: 22px;
-    height: 42px;
-    width: 74px;
-  }
-
-  .access-node.left {
-    left: 28px;
-  }
-
-  .access-node.right {
-    right: 28px;
-  }
-
   .timeline-content::before {
     border-bottom: 10px solid transparent;
     border-left: 12px solid var(--line);
@@ -1475,9 +1196,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     }
 
     .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content,
-    .timeline-artifact,
-    .timeline-item:nth-child(even) .timeline-artifact {
+    .timeline-item:nth-child(even) .timeline-content {
       grid-column: 1;
       grid-template-columns: 1fr;
       padding: 22px;
@@ -1486,9 +1205,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     .timeline-content::before,
     .timeline-content::after,
     .timeline-item:nth-child(even) .timeline-content::before,
-    .timeline-item:nth-child(even) .timeline-content::after,
-    .timeline-artifact::before,
-    .timeline-item:nth-child(even) .timeline-artifact::before {
+    .timeline-item:nth-child(even) .timeline-content::after {
       display: none;
     }
 
