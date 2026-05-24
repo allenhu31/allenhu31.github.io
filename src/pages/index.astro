@@ -173,6 +173,25 @@ const experiences = [
       'Optimized Layer 2 physical structure, STP, HSRP, route policy, BGP, OSPF, and EIGRP filtering to reduce loop and routing instability risk.',
       'Led Hong Kong HGC data center network construction for overseas mail, DNS, and business-critical systems.',
     ],
+    topology: {
+      eyebrow: 'Topology Archive',
+      title: '2009-2011 IDC Network Topology',
+      href: '/work/china-digital-idc-topology/',
+      images: [
+        {
+          src: '/images/work/china-digital-topology/thumbs/topology-main.jpg',
+          alt: 'Main Guangzhou and Foshan IDC topology thumbnail',
+        },
+        {
+          src: '/images/work/china-digital-topology/thumbs/access-switch-topology.jpg',
+          alt: '4506 core and access switch topology thumbnail',
+        },
+        {
+          src: '/images/work/china-digital-topology/thumbs/north-china-topology.jpg',
+          alt: 'North China connectivity topology thumbnail',
+        },
+      ],
+    },
     caseStudy: {
       eyebrow: 'Troubleshooting Case',
       title: 'Network Incident Case: MAC Flapping and HSRP Instability on Core Switches',
@@ -434,14 +453,27 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
                   {job.stack.map((item) => <span>{item}</span>)}
                 </div>
               </div>
-              {
-                job.caseStudy && (
-                  <a class="timeline-case" href={job.caseStudy.href}>
-                    <span>{job.caseStudy.eyebrow}</span>
-                    <strong>{job.caseStudy.title}</strong>
-                  </a>
-                )
-              }
+              {(job.topology || job.caseStudy) && (
+                <div class="timeline-side">
+                  {job.topology && (
+                    <a class="topology-preview" href={job.topology.href}>
+                      <span>{job.topology.eyebrow}</span>
+                      <strong>{job.topology.title}</strong>
+                      <div class="topology-thumb-grid">
+                        {job.topology.images.map((image) => (
+                          <img src={image.src} alt={image.alt} loading="lazy" />
+                        ))}
+                      </div>
+                    </a>
+                  )}
+                  {job.caseStudy && (
+                    <a class="timeline-case" href={job.caseStudy.href}>
+                      <span>{job.caseStudy.eyebrow}</span>
+                      <strong>{job.caseStudy.title}</strong>
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
@@ -984,21 +1016,32 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     grid-column: 3;
   }
 
+  .timeline-side {
+    align-self: stretch;
+    display: grid;
+    gap: 18px;
+    grid-column: 3;
+    min-height: 100%;
+  }
+
+  .timeline-item:nth-child(even) .timeline-side {
+    grid-column: 1;
+  }
+
+  .topology-preview,
   .timeline-case {
-    align-self: end;
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: 0 18px 40px rgba(24, 33, 31, 0.06);
     display: grid;
     gap: 12px;
-    grid-column: 3;
-    margin-bottom: 24px;
     min-width: 0;
-    padding: 28px;
+    padding: 22px;
     position: relative;
   }
 
+  .topology-preview::before,
   .timeline-case::before {
     background: var(--accent);
     border-radius: 999px;
@@ -1011,6 +1054,13 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     width: 34px;
   }
 
+  .timeline-item:nth-child(even) .topology-preview::before,
+  .timeline-item:nth-child(even) .timeline-case::before {
+    left: auto;
+    right: -42px;
+  }
+
+  .topology-preview span,
   .timeline-case span {
     color: var(--accent-dark);
     font-size: 0.76rem;
@@ -1018,10 +1068,37 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     text-transform: uppercase;
   }
 
+  .topology-preview strong,
   .timeline-case strong {
     color: var(--ink);
-    font-size: 1.34rem;
+    font-size: 1.12rem;
     line-height: 1.25;
+  }
+
+  .topology-thumb-grid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topology-thumb-grid img {
+    aspect-ratio: 4 / 3;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    display: block;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .topology-thumb-grid img:first-child {
+    aspect-ratio: 16 / 10;
+    grid-column: 1 / -1;
+  }
+
+  .timeline-case {
+    align-self: end;
+    margin-top: auto;
   }
 
   .timeline-content::before {
@@ -1265,8 +1342,14 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
 
     .timeline-content,
     .timeline-item:nth-child(even) .timeline-content,
-    .timeline-case {
+    .timeline-side,
+    .timeline-item:nth-child(even) .timeline-side {
       grid-column: 1;
+      min-height: 0;
+    }
+
+    .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
       grid-template-columns: 1fr;
       padding: 22px;
     }
@@ -1275,6 +1358,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
     .timeline-content::after,
     .timeline-item:nth-child(even) .timeline-content::before,
     .timeline-item:nth-child(even) .timeline-content::after,
+    .topology-preview::before,
     .timeline-case::before {
       display: none;
     }
