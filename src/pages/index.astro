@@ -1078,8 +1078,8 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
   .topology-thumb-grid {
     display: grid;
     gap: 8px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 52%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
   }
 
   .topology-thumb-grid img {
@@ -1093,8 +1093,7 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
   }
 
   .topology-thumb-grid img:first-child {
-    aspect-ratio: 16 / 10;
-    grid-column: 1 / -1;
+    aspect-ratio: 4 / 3;
   }
 
   .timeline-case {
