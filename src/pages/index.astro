@@ -918,18 +918,48 @@ const hobbyPreview = [photos[25], photos[23], photos[18], photos[16], photos[9],
   }
 
   .timeline-item {
-    background: transparent;
+    background: color-mix(in srgb, var(--timeline-band, #f7f8f3) 72%, transparent);
     border: 0;
+    border-radius: 10px;
     box-shadow: none;
     display: grid;
     gap: 14px;
     grid-template-columns: minmax(0, 1fr) 112px minmax(0, 1fr);
     min-width: 0;
+    padding: 36px;
     position: relative;
   }
 
   .timeline-item + .timeline-item {
-    margin-top: 64px;
+    margin-top: 24px;
+  }
+
+  .timeline-item:nth-child(1) {
+    --timeline-band: #f4f7f2;
+  }
+
+  .timeline-item:nth-child(2) {
+    --timeline-band: #f5f6f8;
+  }
+
+  .timeline-item:nth-child(3) {
+    --timeline-band: #f7f5f1;
+  }
+
+  .timeline-item:nth-child(4) {
+    --timeline-band: #f3f7f7;
+  }
+
+  .timeline-item:nth-child(5) {
+    --timeline-band: #f7f3f3;
+  }
+
+  .timeline-item:nth-child(6) {
+    --timeline-band: #f4f6f1;
+  }
+
+  .timeline-item:nth-child(7) {
+    --timeline-band: #f5f7f6;
   }
 
   .timeline-item::before {
