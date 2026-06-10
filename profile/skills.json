@@ -4,23 +4,24 @@
         {
             "title": "Network Architecture",
             "items": [
-                { "icon": "images/skills/nginx.png", "title": "BGP/MPLS" },
-                { "icon": "images/skills/nginx.png", "title": "OSPF" },
-                { "icon": "images/skills/nginx.png", "title": "EVPN/VXLAN" },
-                { "icon": "images/skills/nginx.png", "title": "SD-WAN" },
-                { "icon": "images/skills/nginx.png", "title": "IDC" },
-                { "icon": "images/skills/nginx.png", "title": "Office Network" }
+                { "icon": "images/skills/cisco.svg", "title": "BGP/MPLS" },
+                { "icon": "images/skills/cisco.svg", "title": "OSPF" },
+                { "icon": "images/skills/cisco.svg", "title": "EVPN/VXLAN" },
+                { "icon": "images/skills/cisco.svg", "title": "SD-WAN" },
+                { "icon": "images/skills/cisco.svg", "title": "IDC" },
+                { "icon": "images/skills/cisco.svg", "title": "Office Network" }
             ]
         },
         {
             "title": "Cloud, Security & Platforms",
             "items": [
-                { "icon": "images/skills/k8s.png", "title": "AWS" },
-                { "icon": "images/skills/k8s.png", "title": "Huawei Cloud" },
+                { "icon": "images/skills/vmware.svg", "title": "VMware NSX-T" },
+                { "icon": "images/skills/aws.svg", "title": "AWS" },
+                { "icon": "images/skills/huawei.svg", "title": "Huawei Cloud" },
                 { "icon": "images/skills/docker.png", "title": "Kubernetes" },
-                { "icon": "images/skills/nginx.png", "title": "Firewall" },
-                { "icon": "images/skills/nginx.png", "title": "WAF" },
-                { "icon": "images/skills/nginx.png", "title": "IDS/IPS" }
+                { "icon": "images/skills/cisco.svg", "title": "Firewall" },
+                { "icon": "images/skills/cisco.svg", "title": "WAF" },
+                { "icon": "images/skills/cisco.svg", "title": "IDS/IPS" }
             ]
         },
         {
@@ -31,7 +32,7 @@
                 { "icon": "images/skills/git.png", "title": "Git" },
                 { "icon": "images/skills/prometheus.png", "title": "Prometheus" },
                 { "icon": "images/skills/grafana.png", "title": "Grafana" },
-                { "icon": "images/skills/k8s.png", "title": "Zabbix" }
+                { "icon": "images/skills/cisco.svg", "title": "Zabbix" }
             ]
         }
     ]

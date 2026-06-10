@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Huawei Cloud">
+  <rect width="120" height="120" rx="18" fill="#fff"/>
+  <g fill="#d71920" transform="translate(60 47)">
+    <path d="M0-34c8 12 7 24 0 35-7-11-8-23 0-35z"/>
+    <path d="M-14-30c4 13 1 23-9 32-4-13-1-24 9-32z"/>
+    <path d="M14-30c-4 13-1 23 9 32 4-13 1-24-9-32z"/>
+    <path d="M-28-18c1 13 7 21 19 26-1-13-7-21-19-26z"/>
+    <path d="M28-18c-1 13-7 21-19 26 1-13 7-21 19-26z"/>
+    <path d="M-35-2c6 11 15 16 29 17-6-11-15-16-29-17z"/>
+    <path d="M35-2c-6 11-15 16-29 17 6-11 15-16 29-17z"/>
+  </g>
+  <text x="60" y="94" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#333">Huawei</text>
+</svg>
