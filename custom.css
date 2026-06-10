@@ -1,0 +1,64 @@
+.navbar-brand {
+  font-size: 20px !important;
+}
+
+.navbar__link {
+  font-size: 18px !important;
+  letter-spacing: .1em !important;
+  margin-left: .75em !important;
+  margin-right: .75em !important;
+}
+
+#home h1 {
+  font-size: 5em !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+#home h2,
+#home .Typewriter__wrapper,
+#home .Typewriter__cursor {
+  font-size: xx-large !important;
+}
+
+#home .social-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.header {
+  font-size: 3em !important;
+}
+
+.section-content-container {
+  font-size: 1rem;
+}
+
+.section-content-container p,
+.section-content-container li {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.section-content-container h2 {
+  font-size: 2rem;
+}
+
+.section-content-container h3 {
+  font-size: 1.75rem;
+}
+
+.section-content-container img {
+  transform: scale(1.15);
+  transform-origin: center;
+}
+
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 3em !important;
+  }
+
+  .section-content-container {
+    font-size: 1rem;
+  }
+}
