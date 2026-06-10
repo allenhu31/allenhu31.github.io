@@ -1,24 +1,32 @@
+html,
+body {
+  font-size: 16px !important;
+}
+
 .navbar-brand {
   font-size: 20px !important;
+  line-height: 30px !important;
 }
 
 .navbar__link {
   font-size: 18px !important;
-  letter-spacing: .1em !important;
+  letter-spacing: 1.8px !important;
+  line-height: 27px !important;
   margin-left: .75em !important;
   margin-right: .75em !important;
 }
 
 #home h1 {
-  font-size: 5em !important;
+  font-size: 80px !important;
   font-weight: 500 !important;
-  line-height: 1.2 !important;
+  line-height: 96px !important;
 }
 
 #home h2,
 #home .Typewriter__wrapper,
 #home .Typewriter__cursor {
-  font-size: xx-large !important;
+  font-size: 32px !important;
+  line-height: 48px !important;
 }
 
 #home .social-icon {
@@ -27,25 +35,28 @@
 }
 
 .header {
-  font-size: 3em !important;
+  font-size: 48px !important;
+  line-height: 72px !important;
 }
 
 .section-content-container {
-  font-size: 1rem;
+  font-size: 19.2px !important;
 }
 
 .section-content-container p,
 .section-content-container li {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 19.2px !important;
+  line-height: 28.8px !important;
 }
 
 .section-content-container h2 {
-  font-size: 2rem;
+  font-size: 32px !important;
+  line-height: 48px !important;
 }
 
 .section-content-container h3 {
-  font-size: 1.75rem;
+  font-size: 28px !important;
+  line-height: 42px !important;
 }
 
 .section-content-container img {
@@ -53,12 +64,98 @@
   transform-origin: center;
 }
 
+.certifications-header {
+  margin-top: 72px;
+}
+
+.certifications-section {
+  align-items: stretch !important;
+  gap: 0;
+  margin: 0 auto 64px;
+  max-width: 980px;
+  text-align: left;
+  width: min(90vw, 980px);
+}
+
+.cert-card {
+  border-bottom: 1px solid rgba(0, 0, 0, .14);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 64px 1fr;
+  padding: 24px 0;
+}
+
+.cert-card:first-child {
+  border-top: 1px solid rgba(0, 0, 0, .14);
+}
+
+.cert-icon {
+  height: 56px !important;
+  object-fit: contain;
+  transform: none !important;
+  width: 56px !important;
+}
+
+.cert-title {
+  font-size: 22px !important;
+  font-weight: 700;
+  line-height: 29px !important;
+  margin: 0 0 2px;
+}
+
+.cert-issuer,
+.cert-date,
+.cert-meta,
+.cert-skills {
+  color: #565656;
+  font-size: 17px !important;
+  line-height: 25px !important;
+}
+
+.cert-skills {
+  margin-top: 10px;
+}
+
+.cert-skills strong {
+  color: #111;
+}
+
+#education .education__item-date,
+#education .timeline-date,
+#education .date,
+#education time,
+.timeline-item-date:has(.timeline-item-dateinner[title=""]) {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
-  #home h1 {
-    font-size: 3em !important;
+  .navbar__link {
+    font-size: 16px !important;
   }
 
-  .section-content-container {
-    font-size: 1rem;
+  #home h1 {
+    font-size: 48px !important;
+    line-height: 58px !important;
+  }
+
+  #home h2,
+  #home .Typewriter__wrapper,
+  #home .Typewriter__cursor {
+    font-size: 24px !important;
+    line-height: 36px !important;
+  }
+
+  .header {
+    font-size: 40px !important;
+    line-height: 56px !important;
+  }
+
+  .cert-card {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .cert-icon {
+    height: 44px !important;
+    width: 44px !important;
   }
 }
