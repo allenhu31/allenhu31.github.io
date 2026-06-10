@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "image": "",
+            "title": "MAC Flapping and HSRP Instability on Core Switches",
+            "bodyText": "- Production incident case involving MAC address flapping, HSRP state transitions, high CPU, and Layer 2 loop isolation.\n- Focus: STP, HSRP, core switching, incident response, and post-incident optimization.\n",
+            "links": [
+                { "text": "Read Case", "href": "https://allenhu31.github.io/work/mac-flapping-hsrp-instability/" }
+            ],
+            "tags": ["STP", "HSRP", "Troubleshooting"]
+        },
+        {
+            "image": "",
+            "title": "Cisco Nexus-Based Cloud Network Operations",
+            "bodyText": "- Operating and troubleshooting a large-scale Cisco Nexus cloud network built with Nexus 7018, Nexus 5545, Nexus 2048, vPC, FEX, and VRF.\n- Focus: production change risk, software defects, and architecture stability.\n",
+            "links": [
+                { "text": "Read Case", "href": "https://allenhu31.github.io/work/nexus-cloud-network-operations/" }
+            ],
+            "tags": ["Nexus", "vPC", "VRF"]
+        },
+        {
+            "image": "",
+            "title": "Network Topology Archive",
+            "bodyText": "- Original topology diagrams from IDC, CNLink, China Mobile Cloud, and Sky-Tech Cloud work periods.\n- Focus: real network architecture evidence and operational context.\n",
+            "links": [
+                { "text": "2009-2011 IDC", "href": "https://allenhu31.github.io/work/china-digital-idc-topology/" },
+                { "text": "2011-2014 CNLink", "href": "https://allenhu31.github.io/work/cnlink-cloud-backbone-topology/" },
+                { "text": "2014-2015 Sky-Tech", "href": "https://allenhu31.github.io/work/sky-tech-cloud-network-topology/" }
+            ],
+            "tags": ["Topology", "IDC", "Cloud Network"]
+        },
+        {
+            "image": "",
+            "title": "Technical Articles",
+            "bodyText": "- English technical writing on BGP route flapping, hybrid cloud networking, and the shift from traditional network engineering to cloud networking.\n",
+            "links": [
+                { "text": "BGP Route Flapping", "href": "https://allenhu31.github.io/writing/bgp-route-flapping/" },
+                { "text": "Hybrid Cloud AWS", "href": "https://allenhu31.github.io/writing/hybrid-cloud-networking-aws/" }
+            ],
+            "tags": ["Writing", "BGP", "Hybrid Cloud"]
+        },
+        {
+            "image": "",
+            "title": "Photography",
+            "bodyText": "- Personal photography and aerial landscape shooting outside of work.\n",
+            "links": [
+                { "text": "View Gallery", "href": "https://allenhu31.github.io/photography/" }
+            ],
+            "tags": ["Photography", "Drone", "Landscape"]
+        }
+    ]
+}

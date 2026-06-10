@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MAC Flapping and HSRP Instability - Dongxu.Dev</title>
+  <link rel="stylesheet" href="../../detail.css">
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="../../#projects">Back to Case Studies</a>
+    <div class="eyebrow">Network Incident Case</div>
+    <h1>MAC Flapping and HSRP Instability on Core Switches</h1>
+    <p class="lead">A production troubleshooting case from the 2009-2011 IDC operations period, involving MAC address flapping, frequent HSRP state changes, 99% CPU utilization, and Layer 2 loop isolation.</p>
+
+    <section class="panel">
+      <h2>Incident Description</h2>
+      <p>At 15:50 on June 23, the South China and North China monitoring systems reported dynamic service access issues in the South China region. After logging in to the 4506C and 4506D switches, I found a large number of MAC address flapping logs, frequent HSRP state transitions, and CPU utilization reaching 99% on both core switches.</p>
+      <p>Multiple departments reported that affected service IP addresses became slow to access or completely unreachable.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Actions Taken</h2>
+      <ul>
+        <li>Confirmed monitoring alarms and logged in to both 4506C and 4506D switches despite slow management access.</li>
+        <li>Identified MAC flapping logs, HSRP state transitions, and 99% CPU utilization.</li>
+        <li>Reported the planned troubleshooting steps according to the incident handling process.</li>
+        <li>Determined that the symptoms were likely caused by a Layer 2 loop.</li>
+        <li>Shut down port G2/6 on switch 4506D at 15:57 to isolate the suspected link.</li>
+        <li>Observed CPU utilization return to normal and MAC flapping disappear.</li>
+        <li>Re-enabled port G2/6 at 16:04 and confirmed all affected services recovered at 16:05.</li>
+        <li>Continued monitoring until 18:00 with no further abnormal events.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Root Cause Analysis</h2>
+      <p>The symptoms indicated an STP failure that caused a Layer 2 loop between 4506C, 4506D, and access-layer switches. Broadcast packets circulated repeatedly, consuming CPU and bandwidth resources on the core switches. No clear abnormal log was found before the first MAC flapping event, so the preliminary conclusion was a possible STP software failure.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Follow-up Optimization</h2>
+      <p>I recommended enabling UDLD and STP loop protection mechanisms on all Layer 2 links in the South China IDC, and drafted an implementation plan named Solution for Preventing Layer 2 Loop Incidents.</p>
+    </section>
+  </main>
+</body>
+</html>

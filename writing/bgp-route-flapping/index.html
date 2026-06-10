@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BGP Route Flapping - Dongxu.Dev</title>
+  <link rel="stylesheet" href="../../detail.css">
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="../../#projects">Back to Case Studies</a>
+    <div class="eyebrow">Technical Article</div>
+    <h1>How I Troubleshoot BGP Route Flapping in a Production Network</h1>
+    <section class="panel">
+      <p>BGP route flapping is rarely a single-command problem. In production, I first separate symptoms from causes: whether the route is withdrawn by the local router, rejected by policy, affected by next-hop reachability, or caused by link instability.</p>
+      <p>My usual workflow is to compare BGP neighbor state, route age, AS path changes, prefix policy, interface counters, and upstream/downstream observations. After the unstable segment is isolated, I validate the fix with route stability, traffic recovery, and monitoring data instead of relying only on CLI output.</p>
+    </section>
+  </main>
+</body>
+</html>

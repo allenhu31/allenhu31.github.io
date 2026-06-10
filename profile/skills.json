@@ -1,0 +1,38 @@
+{
+    "intro": "My work sits at the intersection of traditional networking, cloud networking, security operations, Kubernetes networking, and practical automation.",
+    "skills": [
+        {
+            "title": "Network Architecture",
+            "items": [
+                { "icon": "images/skills/nginx.png", "title": "BGP/MPLS" },
+                { "icon": "images/skills/nginx.png", "title": "OSPF" },
+                { "icon": "images/skills/nginx.png", "title": "EVPN/VXLAN" },
+                { "icon": "images/skills/nginx.png", "title": "SD-WAN" },
+                { "icon": "images/skills/nginx.png", "title": "IDC" },
+                { "icon": "images/skills/nginx.png", "title": "Office Network" }
+            ]
+        },
+        {
+            "title": "Cloud, Security & Platforms",
+            "items": [
+                { "icon": "images/skills/k8s.png", "title": "AWS" },
+                { "icon": "images/skills/k8s.png", "title": "Huawei Cloud" },
+                { "icon": "images/skills/docker.png", "title": "Kubernetes" },
+                { "icon": "images/skills/nginx.png", "title": "Firewall" },
+                { "icon": "images/skills/nginx.png", "title": "WAF" },
+                { "icon": "images/skills/nginx.png", "title": "IDS/IPS" }
+            ]
+        },
+        {
+            "title": "Automation & Observability",
+            "items": [
+                { "icon": "images/skills/python.png", "title": "Python" },
+                { "icon": "images/skills/go.png", "title": "Golang" },
+                { "icon": "images/skills/git.png", "title": "Git" },
+                { "icon": "images/skills/prometheus.png", "title": "Prometheus" },
+                { "icon": "images/skills/grafana.png", "title": "Grafana" },
+                { "icon": "images/skills/k8s.png", "title": "Zabbix" }
+            ]
+        }
+    ]
+}

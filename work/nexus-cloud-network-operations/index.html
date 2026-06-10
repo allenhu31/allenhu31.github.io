@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cisco Nexus Cloud Network Operations - Dongxu.Dev</title>
+  <link rel="stylesheet" href="../../detail.css">
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="../../#projects">Back to Case Studies</a>
+    <div class="eyebrow">Operations Case</div>
+    <h1>Operating and Troubleshooting a Large-Scale Cisco Nexus-Based Cloud Network</h1>
+    <p class="lead">During the China Mobile Cloud Southern Base project, I operated a large-scale cloud network based on Cisco Nexus N7018, Nexus 5545, Nexus 2048, vPC, FEX, and VRF.</p>
+
+    <section class="panel">
+      <h2>Architecture Context</h2>
+      <p>The network used vPC, FEX, and VRF extensively. At the time I left the project, the VRF count had reached the platform limit of 4,096. The architecture did not use VDC, which increased the importance of careful change control and fault-domain design.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Production Incidents</h2>
+      <ul>
+        <li>In July 2014, an ACL configuration change on Nexus N7018 triggered a software bug and caused a full network outage.</li>
+        <li>In November 2014, a syslog configuration change on Nexus 5545 triggered another software bug and affected roughly half of the cloud services.</li>
+        <li>During a Nexus 5545 system upgrade, a full outage occurred while upgrading the second device, and Cisco recommended suspending the upgrade process.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Technical Analysis</h2>
+      <p>The main architectural risks were related to vPC peer-link behavior, STP interaction, and the broader Layer 2 design. Even routine changes required careful assessment because configuration changes, software defects, and device reloads could create broad service impact.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Key Takeaways</h2>
+      <p>This experience strengthened my understanding that large-scale data center stability depends not only on advanced technologies, but also on architecture simplicity, clear failure domains, software maturity, and strict change management.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+    "experiences": [
+        {
+            "title": "Core Network Engineer",
+            "subtitle": "China Resources Gas / Runzhi Technology",
+            "workType": "Full-time",
+            "workDescription": [
+                "Operated AWS and Huawei Cloud environments, including subnet and VPC planning, ECS resources, storage planning, capacity management, and cost management.",
+                "Built and maintained connectivity among Zhongshan office, Huawei Cloud, Shanwei data center, Zhengzhou data center, and multiple POP sites.",
+                "Standardized network architecture and security practices for 270 China Resources Gas member companies."
+            ],
+            "dateText": "Jan 2023 - Feb 2024"
+        },
+        {
+            "title": "Network Architect",
+            "subtitle": "Sangfor Technologies Inc.",
+            "workType": "Full-time",
+            "workDescription": [
+                "Owned national hosted-cloud network architecture across 45 self-built nodes and 20 partner-built nodes.",
+                "Designed, delivered, and operated hosted cloud and hyper-converged infrastructure.",
+                "Defined infrastructure operation processes with delivery, SRE, and hyper-converged R&D teams."
+            ],
+            "dateText": "Nov 2021 - Dec 2022"
+        },
+        {
+            "title": "Network Architecture & Operations Lead",
+            "subtitle": "Country Garden Group",
+            "workType": "Full-time",
+            "workDescription": [
+                "Led network optimization across three data centers and two large campus networks.",
+                "Converted 200+ regional site connections from BGP dual-line routing to SD-WAN path selection.",
+                "Led security audit, compliance, emergency drills, WAF, firewall, IDS/IPS, and access authentication work."
+            ],
+            "dateText": "Feb 2021 - Nov 2021"
+        },
+        {
+            "title": "Network Engineer",
+            "subtitle": "Kingsoft Seasun",
+            "workType": "Full-time",
+            "workDescription": [
+                "Owned network architecture, operations, expansion, and optimization for game IDC environments.",
+                "Built EVPN/VXLAN with H3C 6800 for cross-data-center same-subnet requirements.",
+                "Developed Python scripts for device configuration backup, traffic reports, and daily operations; participated in Golang-based CMDB reconstruction."
+            ],
+            "dateText": "Aug 2015 - Jan 2021"
+        },
+        {
+            "title": "Network Engineer",
+            "subtitle": "Sky-Tech Cloud - a Cisco-TCL joint venture",
+            "workType": "Full-time",
+            "workDescription": [
+                "Built network environments for Beijing media gateway, Guangzhou office, Suzhou office, APAC BSS, and Webex-related projects.",
+                "Handled data center site selection, network device selection, network planning, IDC uplink selection, and project delivery control.",
+                "Worked with Cisco Webex DC, media gateway, IDC, office network, Cisco 5500, IPsec VPN, SSL VPN, IDS, IPS, STP, VLAN, HSRP, and 802.1Q."
+            ],
+            "dateText": "May 2014 - Aug 2015"
+        },
+        {
+            "title": "Network Engineer",
+            "subtitle": "CNLink Networks",
+            "workType": "Full-time",
+            "workDescription": [
+                "Built and operated IDC networks and maintained a global BGP MPLS/VPN backbone across 24 POP sites.",
+                "Delivered China Mobile Southern Base cloud data center phase-two network optimization.",
+                "Operated Cisco Nexus 7018, Nexus 5545, Nexus 2048, vPC, FEX, VRF, ASA, IDS, traffic scrubbing, and VMware environments."
+            ],
+            "dateText": "Nov 2011 - May 2014"
+        },
+        {
+            "title": "Network Engineer",
+            "subtitle": "China Digital Group",
+            "workType": "Full-time",
+            "workDescription": [
+                "Operated Guangzhou Qixinggang South China IDC and Hong Kong PCCW IDC networks, maintaining 200+ IDC cabinets and around 500 Cisco switches and routers.",
+                "Designed, configured, and implemented new network requirements for production systems.",
+                "Optimized STP, HSRP, route policy, BGP, OSPF, and EIGRP filtering to reduce loop and routing instability risk."
+            ],
+            "dateText": "Mar 2009 - Nov 2011"
+        }
+    ]
+}
